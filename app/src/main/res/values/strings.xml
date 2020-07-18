@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">LWRP Admin</string>
+    <string-array name="fractionNames">
+        <item>-</item>
+        <item>LSPD</item>
+        <item>FBI</item>
+        <item>-</item>
+        <item>Федеральный госпиталь</item>
+        <item>La Cosa Nostra</item>
+        <item>Yakuza</item>
+        <item>Мэрия Los Santos</item>
+        <item>-</item>
+        <item>-</item>
+        <item>-</item>
+        <item>Автошкола</item>
+        <item>Ballas Gang</item>
+        <item>Vagos Gang</item>
+        <item>Russian Mafia</item>
+        <item>Grove Street Gang</item>
+        <item>Weazel News</item>
+        <item>Aztecas Gang</item>
+        <item>Rifa Gang</item>
+        <item>-</item>
+        <item>Армия USA</item>
+        <item>-</item>
+        <item>Street Racers Club</item>
+        <item>Байкеры</item>
+        <item>Hitmans</item>
+        <item>S.W.A.T</item>
+        <item>Правительство</item>
+        <item>Военно Морской Флот</item>
+        <item>-</item>
+        <item>-</item>
+    </string-array>
+</resources>
