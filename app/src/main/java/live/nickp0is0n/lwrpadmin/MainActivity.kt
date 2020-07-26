@@ -60,6 +60,10 @@ class MainActivity : AppCompatActivity() {
             Response.Listener { response ->
                 run {
                     val obj = JSONObject(response)
+                    if (obj.getString("nickname") == "null") {
+                        nameEdit.error = "Данный пользователь не является администратором сервера"
+                        progressBar.visibility = INVISIBLE
+                    }
                     admin = Admin(
                         obj.getString("nickname"),
                         obj.getInt("adminLevel"),
