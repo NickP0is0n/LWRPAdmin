@@ -19,6 +19,8 @@ import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import com.github.javiersantos.appupdater.AppUpdater
+import com.github.javiersantos.appupdater.enums.UpdateFrom
 import kotlinx.android.synthetic.main.activity_main.*
 import live.nickp0is0n.lwrpadmin.models.Admin
 import live.nickp0is0n.lwrpadmin.models.User
@@ -33,6 +35,14 @@ class MainActivity : AppCompatActivity() {
         requestWindowFeature(Window.FEATURE_NO_TITLE) //will hide the title
         supportActionBar?.hide() //hide the title bar
         setContentView(R.layout.activity_main)
+        enableAutoUpdater()
+    }
+
+    private fun enableAutoUpdater() {
+        val appUpdater = AppUpdater(this)
+            .setUpdateFrom(UpdateFrom.GITHUB)
+            .setGitHubUserAndRepo("NickP0is0n", "LWRPAdminUpdates")
+        appUpdater.start()
     }
 
     fun onLoginButtonClick(view: View) {
