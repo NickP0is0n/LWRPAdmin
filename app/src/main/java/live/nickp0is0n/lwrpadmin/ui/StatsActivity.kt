@@ -76,6 +76,6 @@ class StatsActivity : AppCompatActivity() {
         reportCount.text = "${admin.reportsAnswered} раз"
         muteCount.text = "${admin.muted} раз"
         jailCount.text = "${admin.jailed} раз"
-        warnCount.text = "${admin.awarnCount}/3"
+        warnCount.text = "${admin.pAvig}/3"
     }
 }

@@ -26,7 +26,7 @@ import kotlinx.android.parcel.Parcelize
  * @property reportsAnswered
  * @property muted
  * @property jailed
- * @property awarnCount
+ * @property pAvig
  */
 @Parcelize
 data class Admin(
@@ -42,5 +42,5 @@ data class Admin(
     val reportsAnswered: Int,
     val muted: Int,
     val jailed: Int,
-    val awarnCount: Int
+    val pAvig: Int
 ) : Parcelable

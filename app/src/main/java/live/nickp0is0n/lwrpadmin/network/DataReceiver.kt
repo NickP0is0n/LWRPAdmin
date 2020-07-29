@@ -13,4 +13,5 @@ import org.json.JSONObject
 interface DataReceiver {
     fun receiveData(data: JSONObject)
     fun errorCallback(text: String)
+    fun getData() : Any?
 }

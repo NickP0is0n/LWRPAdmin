@@ -47,7 +47,7 @@ class AdminListActivity : AppCompatActivity() {
         admins = loadAdmins()
         val nicknamesList = ArrayList<String>()
         admins.forEach {
-            nicknamesList.add("[${it.adminLevel} уровень] ${it.nickname} (${it.awarnCount} предупреждений)")
+            nicknamesList.add("[${it.adminLevel} уровень] ${it.nickname} (${it.pAvig} предупреждений)")
         }
         val adapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, nicknamesList)
         adminOnlineListView.adapter = adapter

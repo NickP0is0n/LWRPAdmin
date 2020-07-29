@@ -8,6 +8,7 @@
 
 package live.nickp0is0n.lwrpadmin.network
 
+import live.nickp0is0n.lwrpadmin.models.User
 import live.nickp0is0n.lwrpadmin.service.QueryStatus
 import org.json.JSONObject
 
@@ -27,4 +28,7 @@ class UserCredentialsReceiver : DataReceiver {
         notifier.status = QueryStatus.ERROR
         notifier.notifyObserver()
     }
+
+    override fun getData(): Any? = if (data!!.isNull("nickname")) null
+        else User(data!!.getString("nickname"), data!!.getString("password"))
 }

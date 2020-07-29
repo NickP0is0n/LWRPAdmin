@@ -29,7 +29,8 @@ import live.nickp0is0n.lwrpadmin.service.QueryStatus
 import live.nickp0is0n.lwrpadmin.ui.MenuActivity
 
 class MainActivity : AppCompatActivity(), Observer {
-    var user: User = User("sample", "sample")
+
+    private var user: User = User("sample", "sample")
 
     private lateinit var receiver: DataReceiver
     private lateinit var queryClient: QueryClient
@@ -42,16 +43,28 @@ class MainActivity : AppCompatActivity(), Observer {
         enableAutoUpdater()
     }
 
-    private fun enableAutoUpdater() {
-        val appUpdater = AppUpdater(this)
-            .setUpdateFrom(UpdateFrom.GITHUB)
-            .setGitHubUserAndRepo("NickP0is0n", "LWRPAdminUpdates")
-        appUpdater.start()
+    override fun update(status: QueryStatus, queueName: String) {
+        if (status == QueryStatus.ERROR) {
+            nameEdit.error = "Ошибка сервера, повторите позже"
+            progressBar.visibility = INVISIBLE
+            return
+        }
+        when (queueName) {
+            "credentials" -> updateCredentials()
+            "adminInfo" -> updateAdminInfo()
+        }
     }
 
     fun onLoginButtonClick(view: View) {
         progressBar.visibility = VISIBLE
         checkCredentials()
+    }
+
+    private fun enableAutoUpdater() {
+        val appUpdater = AppUpdater(this)
+            .setUpdateFrom(UpdateFrom.GITHUB)
+            .setGitHubUserAndRepo("NickP0is0n", "LWRPAdminUpdates")
+        appUpdater.start()
     }
 
     private fun getAdminInfo() {
@@ -77,53 +90,25 @@ class MainActivity : AppCompatActivity(), Observer {
         queryClient.executeQuery(context = this, scriptPath = "getAccountInfo.php", dataReceiver = receiver)
     }
 
-    override fun update(status: QueryStatus, queueName: String) {
-        if (status == QueryStatus.ERROR) {
-            nameEdit.error = "Ошибка сервера, повторите позже"
-            progressBar.visibility = INVISIBLE
-            return
-        }
-        when (queueName) {
-            "credentials" -> updateCredentials()
-            "adminInfo" -> updateAdminInfo()
-        }
-    }
-
     private fun updateCredentials() {
-        val user: User
-        val responseObject = (receiver as UserCredentialsReceiver).data
-        if (responseObject!!.isNull("nickname")) {
+        val user = receiver.getData()
+        if (user == null) {
             nameEdit.error = "Неправильный логин или пароль"
+            progressBar.visibility = View.INVISIBLE
         }
         else {
-            user = User(responseObject.getString("nickname"), responseObject.getString("password"))
+            this.user = user as User
             getAdminInfo()
         }
     }
 
     private fun updateAdminInfo() {
-        val admin: Admin
-        val responseObject = (receiver as StatsReceiver).data
-        if (responseObject!!.getString("nickname") == "null") {
+        val admin = receiver.getData()
+        if (admin == null) {
             nameEdit.error = "Данный пользователь не является администратором сервера"
-            progressBar.visibility = INVISIBLE
+            progressBar.visibility = View.INVISIBLE
         }
-        admin = Admin(
-            responseObject.getString("nickname"),
-            responseObject.getInt("adminLevel"),
-            responseObject.getInt("mondayOnline"),
-            responseObject.getInt("tuesdayOnline"),
-            responseObject.getInt("wednesdayOnline"),
-            responseObject.getInt("thursdayOnline"),
-            responseObject.getInt("fridayOnline"),
-            responseObject.getInt("saturdayOnline"),
-            responseObject.getInt("sundayOnline"),
-            responseObject.getInt("reportsAnswered"),
-            responseObject.getInt("muted"),
-            responseObject.getInt("jailed"),
-            responseObject.getInt("pAvig")
-        )
-        loadStatsForm(admin)
+        else loadStatsForm(admin as Admin)
     }
 
     private fun getGlobalQueryVariables() : HashMap<String, String> {

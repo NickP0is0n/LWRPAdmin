@@ -24,17 +24,23 @@ import live.nickp0is0n.lwrpadmin.R
 import live.nickp0is0n.lwrpadmin.models.Admin
 import live.nickp0is0n.lwrpadmin.models.Leader
 import live.nickp0is0n.lwrpadmin.models.User
+import live.nickp0is0n.lwrpadmin.network.DataReceiver
+import live.nickp0is0n.lwrpadmin.network.QueryClient
 import org.json.JSONArray
 
 class MenuActivity : AppCompatActivity() {
     private var user: User? = null
     private var admin: Admin? = null
 
+    private lateinit var receiver: DataReceiver
+    private lateinit var queryClient: QueryClient
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu)
         user = intent.extras?.get("user") as User
         admin = intent.extras?.get("adminInfo") as Admin
+        queryClient = QueryClient("https://lwrp.ru/service/functions/hidden/fu3u8w2/", getGlobalQueryVariables())
         playMainMenuBarAnimation()
     }
 
@@ -134,7 +140,7 @@ class MenuActivity : AppCompatActivity() {
                             reportsAnswered = array.getJSONArray(i).getInt(9),
                             muted = array.getJSONArray(i).getInt(10),
                             jailed = array.getJSONArray(i).getInt(11),
-                            awarnCount = array.getJSONArray(i).getInt(12)
+                            pAvig = array.getJSONArray(i).getInt(12)
                         ))
                     }
                     val intent = Intent(this, AdminListActivity::class.java)
@@ -155,6 +161,13 @@ class MenuActivity : AppCompatActivity() {
             }
         }
         queue.add(adminListRequest)
+    }
+
+    private fun getGlobalQueryVariables() : HashMap<String, String> {
+        val headers = HashMap<String, String>()
+        headers["username"] = user!!.nickname
+        headers["password"] = user!!.password
+        return headers
     }
 
 }
