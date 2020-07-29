@@ -9,7 +9,6 @@
 package live.nickp0is0n.lwrpadmin.network
 
 import android.content.Context
-import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
@@ -20,8 +19,8 @@ class QueryClient(val basicUrl: String, val globalParams: HashMap<String, String
         val queue = Volley.newRequestQueue(context)
         var result: Any?
 
-        val loginRequest = object : StringRequest(
-            Request.Method.POST, basicUrl + scriptPath,
+        val request = object : StringRequest(
+            Method.POST, basicUrl + scriptPath,
             Response.Listener { response ->
                 run {
                     val obj = JSONObject(response)
@@ -39,5 +38,6 @@ class QueryClient(val basicUrl: String, val globalParams: HashMap<String, String
                 return headers
             }
         }
+        queue.add(request)
     }
 }

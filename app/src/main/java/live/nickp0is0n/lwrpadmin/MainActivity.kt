@@ -15,20 +15,24 @@ import android.view.View.INVISIBLE
 import android.view.View.VISIBLE
 import android.view.Window
 import androidx.appcompat.app.AppCompatActivity
-import com.android.volley.Request
-import com.android.volley.Response
-import com.android.volley.toolbox.StringRequest
-import com.android.volley.toolbox.Volley
 import com.github.javiersantos.appupdater.AppUpdater
 import com.github.javiersantos.appupdater.enums.UpdateFrom
 import kotlinx.android.synthetic.main.activity_main.*
 import live.nickp0is0n.lwrpadmin.models.Admin
 import live.nickp0is0n.lwrpadmin.models.User
+import live.nickp0is0n.lwrpadmin.network.DataReceiver
+import live.nickp0is0n.lwrpadmin.network.QueryClient
+import live.nickp0is0n.lwrpadmin.network.StatsReceiver
+import live.nickp0is0n.lwrpadmin.network.UserCredentialsReceiver
+import live.nickp0is0n.lwrpadmin.service.Observer
+import live.nickp0is0n.lwrpadmin.service.QueryStatus
 import live.nickp0is0n.lwrpadmin.ui.MenuActivity
-import org.json.JSONObject
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), Observer {
     var user: User = User("sample", "sample")
+
+    private lateinit var receiver: DataReceiver
+    private lateinit var queryClient: QueryClient
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,51 +55,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun getAdminInfo() {
-        val queue = Volley.newRequestQueue(this)
-        val url = "https://lwrp.ru/service/functions/hidden/fu3u8w2/getAccountInfo1.php"
-        var admin: Admin
-
-        val loginRequest = object : StringRequest(
-            Request.Method.POST, url,
-            Response.Listener { response ->
-                run {
-                    val obj = JSONObject(response)
-                    if (obj.getString("nickname") == "null") {
-                        nameEdit.error = "Данный пользователь не является администратором сервера"
-                        progressBar.visibility = INVISIBLE
-                    }
-                    admin = Admin(
-                        obj.getString("nickname"),
-                        obj.getInt("adminLevel"),
-                        obj.getInt("mondayOnline"),
-                        obj.getInt("tuesdayOnline"),
-                        obj.getInt("wednesdayOnline"),
-                        obj.getInt("thursdayOnline"),
-                        obj.getInt("fridayOnline"),
-                        obj.getInt("saturdayOnline"),
-                        obj.getInt("sundayOnline"),
-                        obj.getInt("reportsAnswered"),
-                        obj.getInt("muted"),
-                        obj.getInt("jailed"),
-                        obj.getInt("pAvig")
-                    )
-                    loadStatsForm(admin)
-                }
-            },
-            Response.ErrorListener {
-                nameEdit.error = "Ошибка сервера, повторите позже"
-                progressBar.visibility = INVISIBLE
-            }) {
-                    override fun getParams(): MutableMap<String, String> {
-                        val headers = HashMap<String, String>()
-                        headers["username"] = nameEdit.text.toString()
-                        headers["password"] = passwordEdit.text.toString()
-                        headers["admin_username"] = nameEdit.text.toString()
-                        return headers
-            }
-        }
-
-        queue.add(loginRequest)
+        receiver = StatsReceiver()
+        (receiver as StatsReceiver).notifier.addObserver(this@MainActivity)
+        val localQueryVariables = HashMap<String, String>()
+        localQueryVariables["admin_username"] = nameEdit.text.toString()
+        queryClient.executeQuery(this, "getAccountInfo1.php", localQueryVariables, receiver)
     }
     
     private fun loadStatsForm(admin: Admin) {
@@ -107,35 +71,65 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun checkCredentials() {
-        val queue = Volley.newRequestQueue(this)
-        val url = "https://lwrp.ru/service/functions/hidden/fu3u8w2/getAccountInfo.php"
+        queryClient = QueryClient("https://lwrp.ru/service/functions/hidden/fu3u8w2/", getGlobalQueryVariables())
+        receiver = UserCredentialsReceiver()
+        (receiver as UserCredentialsReceiver).notifier.addObserver(this@MainActivity)
+        queryClient.executeQuery(context = this, scriptPath = "getAccountInfo.php", dataReceiver = receiver)
+    }
 
-        val loginRequest = object : StringRequest(
-            Method.POST, url,
-            Response.Listener { response ->
-                run {
-                    val obj = JSONObject(response)
-                    if (obj.isNull("nickname")) {
-                        nameEdit.error = "Неправильный логин или пароль"
-                    }
-                    else {
-                        user = User(obj.getString("nickname"), obj.getString("password"))
-                        getAdminInfo()
-                    }
-                }
-            },
-            Response.ErrorListener {
-                nameEdit.error = "Ошибка сервера, повторите позже"
-                progressBar.visibility = INVISIBLE
-            }
-        ) {
-            override fun getParams(): MutableMap<String, String> {
-                val headers = HashMap<String, String>()
-                headers["username"] = nameEdit.text.toString()
-                headers["password"] = passwordEdit.text.toString()
-                return headers
-            }
+    override fun update(status: QueryStatus, queueName: String) {
+        if (status == QueryStatus.ERROR) {
+            nameEdit.error = "Ошибка сервера, повторите позже"
+            progressBar.visibility = INVISIBLE
+            return
         }
-        queue.add(loginRequest)
+        when (queueName) {
+            "credentials" -> updateCredentials()
+            "adminInfo" -> updateAdminInfo()
+        }
+    }
+
+    private fun updateCredentials() {
+        val user: User
+        val responseObject = (receiver as UserCredentialsReceiver).data
+        if (responseObject!!.isNull("nickname")) {
+            nameEdit.error = "Неправильный логин или пароль"
+        }
+        else {
+            user = User(responseObject.getString("nickname"), responseObject.getString("password"))
+            getAdminInfo()
+        }
+    }
+
+    private fun updateAdminInfo() {
+        val admin: Admin
+        val responseObject = (receiver as StatsReceiver).data
+        if (responseObject!!.getString("nickname") == "null") {
+            nameEdit.error = "Данный пользователь не является администратором сервера"
+            progressBar.visibility = INVISIBLE
+        }
+        admin = Admin(
+            responseObject.getString("nickname"),
+            responseObject.getInt("adminLevel"),
+            responseObject.getInt("mondayOnline"),
+            responseObject.getInt("tuesdayOnline"),
+            responseObject.getInt("wednesdayOnline"),
+            responseObject.getInt("thursdayOnline"),
+            responseObject.getInt("fridayOnline"),
+            responseObject.getInt("saturdayOnline"),
+            responseObject.getInt("sundayOnline"),
+            responseObject.getInt("reportsAnswered"),
+            responseObject.getInt("muted"),
+            responseObject.getInt("jailed"),
+            responseObject.getInt("pAvig")
+        )
+        loadStatsForm(admin)
+    }
+
+    private fun getGlobalQueryVariables() : HashMap<String, String> {
+        val headers = HashMap<String, String>()
+        headers["username"] = nameEdit.text.toString()
+        headers["password"] = passwordEdit.text.toString()
+        return headers
     }
 }

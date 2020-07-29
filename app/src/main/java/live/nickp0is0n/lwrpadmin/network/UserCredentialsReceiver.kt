@@ -11,19 +11,19 @@ package live.nickp0is0n.lwrpadmin.network
 import live.nickp0is0n.lwrpadmin.service.QueryStatus
 import org.json.JSONObject
 
-class StatsReceiver : DataReceiver {
+class UserCredentialsReceiver : DataReceiver {
     val notifier = QueryNotifier()
     var data: JSONObject? = null
 
     override fun receiveData(data: JSONObject) {
         this.data = data
-        notifier.queueName = "adminInfo"
+        notifier.queueName = "credentials"
         notifier.status = QueryStatus.SUCCESS
         notifier.notifyObserver()
     }
 
     override fun errorCallback(text: String) {
-        notifier.queueName = "adminInfo"
+        notifier.queueName = "credentials"
         notifier.status = QueryStatus.ERROR
         notifier.notifyObserver()
     }
