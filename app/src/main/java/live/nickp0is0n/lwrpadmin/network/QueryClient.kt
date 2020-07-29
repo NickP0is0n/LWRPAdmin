@@ -12,10 +12,11 @@ import android.content.Context
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import org.json.JSONArray
 import org.json.JSONObject
 
 class QueryClient(val basicUrl: String, val globalParams: HashMap<String, String>) {
-    fun executeQuery(context: Context, scriptPath: String, localParams: HashMap<String, String>? = null, dataReceiver: DataReceiver) {
+    fun executeQuery(context: Context, scriptPath: String, localParams: HashMap<String, String>? = null, dataReceiver: DataReceiver, isResponseArray: Boolean = false) {
         val queue = Volley.newRequestQueue(context)
         var result: Any?
 
@@ -23,7 +24,8 @@ class QueryClient(val basicUrl: String, val globalParams: HashMap<String, String
             Method.POST, basicUrl + scriptPath,
             Response.Listener { response ->
                 run {
-                    val obj = JSONObject(response)
+                    val obj: Any = if (isResponseArray) JSONArray(response)
+                    else JSONObject(response)
                     dataReceiver.receiveData(obj)
                 }
             },

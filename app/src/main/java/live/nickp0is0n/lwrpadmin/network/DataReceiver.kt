@@ -8,10 +8,8 @@
 
 package live.nickp0is0n.lwrpadmin.network
 
-import org.json.JSONObject
-
 interface DataReceiver {
-    fun receiveData(data: JSONObject)
+    fun receiveData(data: Any)
     fun errorCallback(text: String)
     fun getData() : Any?
 }

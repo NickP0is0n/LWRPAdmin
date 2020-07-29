@@ -14,10 +14,10 @@ import org.json.JSONObject
 
 class UserCredentialsReceiver : DataReceiver {
     val notifier = QueryNotifier()
-    var data: JSONObject? = null
+    private var data: JSONObject? = null
 
-    override fun receiveData(data: JSONObject) {
-        this.data = data
+    override fun receiveData(data: Any) {
+        this.data = data as JSONObject
         notifier.queueName = "credentials"
         notifier.status = QueryStatus.SUCCESS
         notifier.notifyObserver()
