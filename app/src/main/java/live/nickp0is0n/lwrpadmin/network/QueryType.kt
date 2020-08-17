@@ -6,10 +6,12 @@
  * Copyright Mykola Chaikovskyi, 2020.
  */
 
-package live.nickp0is0n.lwrpadmin.service
+package live.nickp0is0n.lwrpadmin.network
 
-import live.nickp0is0n.lwrpadmin.network.QueryType
-
-interface Observer {
-    fun update(status: QueryStatus, resultType: QueryType)
+enum class QueryType {
+    ADMIN_LIST,
+    LEADER_LIST,
+    ADMIN_INFO,
+    CREDENTIALS,
+    OTHER
 }

@@ -18,13 +18,13 @@ class AdminListReceiver : DataReceiver {
 
     override fun receiveData(data: Any) {
         this.data = data as JSONArray
-        notifier.queueName = "adminList"
+        notifier.resultType = QueryType.ADMIN_LIST
         notifier.status = QueryStatus.SUCCESS
         notifier.notifyObserver()
     }
 
     override fun errorCallback(text: String) {
-        notifier.queueName = "adminList"
+        notifier.resultType = QueryType.ADMIN_LIST
         notifier.status = QueryStatus.ERROR
         notifier.notifyObserver()
     }

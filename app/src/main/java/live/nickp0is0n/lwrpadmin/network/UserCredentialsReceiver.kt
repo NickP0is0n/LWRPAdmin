@@ -18,13 +18,13 @@ class UserCredentialsReceiver : DataReceiver {
 
     override fun receiveData(data: Any) {
         this.data = data as JSONObject
-        notifier.queueName = "credentials"
+        notifier.resultType = QueryType.CREDENTIALS
         notifier.status = QueryStatus.SUCCESS
         notifier.notifyObserver()
     }
 
     override fun errorCallback(text: String) {
-        notifier.queueName = "credentials"
+        notifier.resultType = QueryType.CREDENTIALS
         notifier.status = QueryStatus.ERROR
         notifier.notifyObserver()
     }

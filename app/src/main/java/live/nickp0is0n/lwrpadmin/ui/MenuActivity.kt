@@ -21,10 +21,7 @@ import live.nickp0is0n.lwrpadmin.R
 import live.nickp0is0n.lwrpadmin.models.Admin
 import live.nickp0is0n.lwrpadmin.models.Leader
 import live.nickp0is0n.lwrpadmin.models.User
-import live.nickp0is0n.lwrpadmin.network.AdminListReceiver
-import live.nickp0is0n.lwrpadmin.network.DataReceiver
-import live.nickp0is0n.lwrpadmin.network.LeadersReceiver
-import live.nickp0is0n.lwrpadmin.network.QueryClient
+import live.nickp0is0n.lwrpadmin.network.*
 import live.nickp0is0n.lwrpadmin.service.Observer
 import live.nickp0is0n.lwrpadmin.service.QueryStatus
 
@@ -44,15 +41,16 @@ class MenuActivity : AppCompatActivity(), Observer {
         playMainMenuBarAnimation()
     }
 
-    override fun update(status: QueryStatus, queueName: String) {
+    override fun update(status: QueryStatus, resultType: QueryType) {
         if (status == QueryStatus.ERROR) {
             Toast.makeText(this@MenuActivity, "Ошибка сервера, повторите позже.", Toast.LENGTH_SHORT).show()
             progressBar2.visibility = INVISIBLE
             return
         }
-        when (queueName) {
-            "leaderList" -> loadLeaders()
-            "adminList" -> loadAdmins()
+        when (resultType) {
+            QueryType.LEADER_LIST -> loadLeaders()
+            QueryType.ADMIN_LIST -> loadAdmins()
+            else -> Toast.makeText(this@MenuActivity, "Ошибка сервера, повторите позже.", Toast.LENGTH_SHORT).show()
         }
     }
 

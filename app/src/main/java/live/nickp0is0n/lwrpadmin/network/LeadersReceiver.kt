@@ -18,13 +18,13 @@ class LeadersReceiver : DataReceiver {
 
     override fun receiveData(data: Any) {
         this.data = data as JSONArray
-        notifier.queueName = "leaderList"
+        notifier.resultType = QueryType.LEADER_LIST
         notifier.status = QueryStatus.SUCCESS
         notifier.notifyObserver()
     }
 
     override fun errorCallback(text: String) {
-        notifier.queueName = "leaderList"
+        notifier.resultType = QueryType.LEADER_LIST
         notifier.status = QueryStatus.ERROR
         notifier.notifyObserver()
     }

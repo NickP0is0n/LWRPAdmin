@@ -18,13 +18,13 @@ class StatsReceiver : DataReceiver {
 
     override fun receiveData(data: Any) {
         this.data = data as JSONObject
-        notifier.queueName = "adminInfo"
+        notifier.resultType = QueryType.ADMIN_INFO
         notifier.status = QueryStatus.SUCCESS
         notifier.notifyObserver()
     }
 
     override fun errorCallback(text: String) {
-        notifier.queueName = "adminInfo"
+        notifier.resultType = QueryType.ADMIN_INFO
         notifier.status = QueryStatus.ERROR
         notifier.notifyObserver()
     }

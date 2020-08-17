@@ -20,10 +20,7 @@ import com.github.javiersantos.appupdater.enums.UpdateFrom
 import kotlinx.android.synthetic.main.activity_main.*
 import live.nickp0is0n.lwrpadmin.models.Admin
 import live.nickp0is0n.lwrpadmin.models.User
-import live.nickp0is0n.lwrpadmin.network.DataReceiver
-import live.nickp0is0n.lwrpadmin.network.QueryClient
-import live.nickp0is0n.lwrpadmin.network.StatsReceiver
-import live.nickp0is0n.lwrpadmin.network.UserCredentialsReceiver
+import live.nickp0is0n.lwrpadmin.network.*
 import live.nickp0is0n.lwrpadmin.service.Observer
 import live.nickp0is0n.lwrpadmin.service.QueryStatus
 import live.nickp0is0n.lwrpadmin.ui.MenuActivity
@@ -43,15 +40,19 @@ class MainActivity : AppCompatActivity(), Observer {
         enableAutoUpdater()
     }
 
-    override fun update(status: QueryStatus, queueName: String) {
+    override fun update(status: QueryStatus, resultType: QueryType) {
         if (status == QueryStatus.ERROR) {
             nameEdit.error = "Ошибка сервера, повторите позже"
             progressBar.visibility = INVISIBLE
             return
         }
-        when (queueName) {
-            "credentials" -> updateCredentials()
-            "adminInfo" -> updateAdminInfo()
+        when (resultType) {
+            QueryType.CREDENTIALS -> updateCredentials()
+            QueryType.ADMIN_INFO -> updateAdminInfo()
+            else -> {
+                nameEdit.error = "Ошибка сервера, повторите позже"
+                progressBar.visibility = INVISIBLE
+            }
         }
     }
 

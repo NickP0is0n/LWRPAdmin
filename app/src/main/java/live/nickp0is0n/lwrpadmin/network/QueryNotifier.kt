@@ -13,10 +13,10 @@ import live.nickp0is0n.lwrpadmin.service.Observer
 import live.nickp0is0n.lwrpadmin.service.QueryStatus
 
 class QueryNotifier : Notifier {
-    val observerList = ArrayList<Observer>()
+    private val observerList = ArrayList<Observer>()
 
     var status = QueryStatus.ERROR
-    var queueName = ""
+    var resultType = QueryType.OTHER
 
     override fun addObserver(observer: Observer) {
         observerList.add(observer)
@@ -29,7 +29,7 @@ class QueryNotifier : Notifier {
 
     override fun notifyObserver() {
         observerList.forEach {
-            it.update(this.status, this.queueName)
+            it.update(this.status, this.resultType)
         }
     }
 }
