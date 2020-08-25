@@ -226,7 +226,7 @@
         android:textColor="#25568F"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/leaderlisttopbar3" />
+        app:layout_constraintTop_toBottomOf="@+id/gangmaptopbar" />
 
     <TextView
         android:id="@+id/textView30"
@@ -275,7 +275,7 @@
         app:layout_constraintTop_toTopOf="@+id/textView31" />
 
     <View
-        android:id="@+id/leaderlisttopbar3"
+        android:id="@+id/gangmaptopbar"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:background="#25568F"
@@ -293,9 +293,9 @@
         android:textAlignment="viewStart"
         android:textColor="@android:color/white"
         android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="@+id/leaderlisttopbar3"
+        app:layout_constraintBottom_toBottomOf="@+id/gangmaptopbar"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/leaderlisttopbar3" />
+        app:layout_constraintTop_toTopOf="@+id/gangmaptopbar" />
 
     <TextView
         android:id="@+id/gametime11"
