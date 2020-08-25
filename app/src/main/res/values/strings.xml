@@ -54,6 +54,8 @@
     <string name="actionStats">Статистика действий</string>
     <string name="admin">Администратор</string>
     <string name="adminLevelText">уровня</string>
+    <string name="gang_map">Gang map</string>
+    <string name="gang_map_description">Количество территорий и состав банд</string>
     <string-array name="fractionNames">
         <item>-</item>
         <item>LSPD</item>

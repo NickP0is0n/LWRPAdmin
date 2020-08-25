@@ -10,8 +10,8 @@ android {
         applicationId "live.nickp0is0n.lwrpadmin"
         minSdkVersion 24
         targetSdkVersion 30
-        versionCode 9
-        versionName "2.1.0"
+        versionCode 10
+        versionName "2.2.0-preview"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

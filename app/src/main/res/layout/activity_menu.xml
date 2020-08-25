@@ -7,6 +7,81 @@
     tools:context=".ui.MenuActivity">
 
     <View
+        android:id="@+id/view9"
+        android:layout_width="match_parent"
+        android:layout_height="97dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/colorAccent"
+        android:onClick="onChangeAdminPasswordButtonClick"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view5" />
+
+    <TextView
+        android:id="@+id/textView28"
+        android:layout_width="308dp"
+        android:layout_height="19dp"
+        android:text="@string/gang_map_description"
+        android:textColor="@android:color/white"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/title7"
+        app:layout_constraintTop_toBottomOf="@+id/title11" />
+
+    <TextView
+        android:id="@+id/title11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="30dp"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/gang_map"
+        android:textAlignment="viewStart"
+        android:textColor="@android:color/white"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/view9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/view9"
+        app:layout_constraintVertical_bias="0.51" />
+
+    <TextView
+        android:id="@+id/textView27"
+        android:layout_width="308dp"
+        android:layout_height="19dp"
+        android:text="@string/changePasswordDescription"
+        android:textColor="@android:color/white"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/title7"
+        app:layout_constraintTop_toBottomOf="@+id/title7" />
+
+    <TextView
+        android:id="@+id/title10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="30dp"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/changePassword"
+        android:textAlignment="viewStart"
+        android:textColor="@android:color/white"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/view8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/view8" />
+
+    <View
+        android:id="@+id/view5"
+        android:layout_width="match_parent"
+        android:layout_height="97dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/colorAccent"
+        android:onClick="onChangeAdminPasswordButtonClick"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view7" />
+
+    <View
         android:id="@+id/view8"
         android:layout_width="match_parent"
         android:layout_height="97dp"
