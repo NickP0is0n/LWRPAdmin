@@ -19,6 +19,7 @@ import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_menu.*
 import live.nickp0is0n.lwrpadmin.R
 import live.nickp0is0n.lwrpadmin.models.Admin
+import live.nickp0is0n.lwrpadmin.models.GangMap
 import live.nickp0is0n.lwrpadmin.models.Leader
 import live.nickp0is0n.lwrpadmin.models.User
 import live.nickp0is0n.lwrpadmin.network.*
@@ -50,6 +51,7 @@ class MenuActivity : AppCompatActivity(), Observer {
         when (resultType) {
             QueryType.LEADER_LIST -> loadLeaders()
             QueryType.ADMIN_LIST -> loadAdmins()
+            QueryType.GANG_MAP -> loadGangMap()
             else -> Toast.makeText(this@MenuActivity, "Ошибка сервера, повторите позже.", Toast.LENGTH_SHORT).show()
         }
     }
@@ -92,6 +94,12 @@ class MenuActivity : AppCompatActivity(), Observer {
         }
     }
 
+    private fun requestGangMap() {
+        receiver = GangMapReceiver()
+        (receiver as GangMapReceiver).notifier.addObserver(this@MenuActivity)
+        queryClient.executeQuery(context = this, scriptPath = "getGangMap.php", dataReceiver = receiver, isResponseArray = false)
+    }
+
     private fun requestLeaderInfo() {
         receiver = LeadersReceiver()
         (receiver as LeadersReceiver).notifier.addObserver(this@MenuActivity)
@@ -109,6 +117,14 @@ class MenuActivity : AppCompatActivity(), Observer {
         headers["username"] = user!!.nickname
         headers["password"] = user!!.password
         return headers
+    }
+
+    private fun loadGangMap() {
+        val gangMap = receiver.getData() as GangMap
+        val intent = Intent(this, GangMapActivity::class.java)
+        intent.putExtra("gangMap", gangMap)
+        progressBar2.visibility = INVISIBLE
+        startActivity(intent)
     }
 
     private fun loadAdmins() {

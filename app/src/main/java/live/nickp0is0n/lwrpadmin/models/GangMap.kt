@@ -8,6 +8,25 @@
 
 package live.nickp0is0n.lwrpadmin.models
 
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+
+/**
+ * Информация о составе банд и их территориях
+ *
+ * @property groveTerritories
+ * @property groveOnline
+ * @property ballasTerritories
+ * @property ballasOnline
+ * @property vagosTerritories
+ * @property vagosOnline
+ * @property rifaTerritories
+ * @property rifaOnline
+ * @property aztecTerritories
+ * @property aztecOnline
+ * @property lastUpdate
+ */
+@Parcelize
 data class GangMap (
     val groveTerritories: Int,
     val groveOnline: Int,
@@ -20,5 +39,4 @@ data class GangMap (
     val aztecTerritories: Int,
     val aztecOnline: Int,
     val lastUpdate: String
-) {
-}
+) : Parcelable
