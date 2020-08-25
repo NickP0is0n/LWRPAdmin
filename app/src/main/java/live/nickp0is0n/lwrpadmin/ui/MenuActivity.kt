@@ -77,6 +77,13 @@ class MenuActivity : AppCompatActivity(), Observer {
         startActivity(intent)
     }
 
+    fun onGangMapButtonClick(view: View) {
+        val intent = Intent(this, StatsActivity::class.java)
+        intent.putExtra("user", user)
+        intent.putExtra("adminInfo", admin)
+        startActivity(intent)
+    }
+
     private fun playMainMenuBarAnimation() {
         mainmenubar.x -= 1000f
         ObjectAnimator.ofFloat(mainmenubar, "translationX", 0f).apply {
