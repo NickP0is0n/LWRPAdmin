@@ -80,10 +80,8 @@ class MenuActivity : AppCompatActivity(), Observer {
     }
 
     fun onGangMapButtonClick(view: View) {
-        val intent = Intent(this, StatsActivity::class.java)
-        intent.putExtra("user", user)
-        intent.putExtra("adminInfo", admin)
-        startActivity(intent)
+        progressBar2.visibility = VISIBLE
+        requestGangMap()
     }
 
     private fun playMainMenuBarAnimation() {
