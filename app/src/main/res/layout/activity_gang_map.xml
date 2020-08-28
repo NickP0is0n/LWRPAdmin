@@ -125,7 +125,7 @@
                     android:fontFamily="sans-serif-black"
                     android:text="@string/ballas"
                     android:textAlignment="viewStart"
-                    android:textColor="#25568F"
+                    android:textColor="@android:color/holo_purple"
                     android:textSize="24sp"
                     app:layout_constraintStart_toStartOf="@+id/textView31"
                     app:layout_constraintTop_toBottomOf="@+id/textView31" />
@@ -217,7 +217,7 @@
                     android:fontFamily="sans-serif-black"
                     android:text="@string/vagos"
                     android:textAlignment="viewStart"
-                    android:textColor="#25568F"
+                    android:textColor="@android:color/holo_orange_dark"
                     android:textSize="24sp"
                     app:layout_constraintStart_toStartOf="@+id/textView34"
                     app:layout_constraintTop_toBottomOf="@+id/textView34" />
@@ -322,7 +322,7 @@
                     android:fontFamily="sans-serif-black"
                     android:text="@string/aztecas"
                     android:textAlignment="viewStart"
-                    android:textColor="#25568F"
+                    android:textColor="@android:color/holo_blue_bright"
                     android:textSize="24sp"
                     app:layout_constraintStart_toStartOf="@+id/textView44"
                     app:layout_constraintTop_toBottomOf="@+id/textView44" />
@@ -348,7 +348,7 @@
                     android:fontFamily="sans-serif-black"
                     android:text="@string/groveStreet"
                     android:textAlignment="viewStart"
-                    android:textColor="#25568F"
+                    android:textColor="@android:color/holo_green_dark"
                     android:textSize="24sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -358,22 +358,24 @@
 
     <View
         android:id="@+id/gangmaptopbar"
+        android:elevation="20dp"
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:background="#25568F"
+        android:background="@drawable/rounded_menu_item"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/title9"
+        android:elevation="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:fontFamily="sans-serif-black"
         android:text="@string/gang_map"
         android:textAlignment="viewStart"
-        android:textColor="@android:color/white"
+        android:textColor="@color/colorAccent"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="@+id/gangmaptopbar"
         app:layout_constraintStart_toStartOf="parent"

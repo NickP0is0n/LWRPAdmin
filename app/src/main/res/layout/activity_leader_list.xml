@@ -8,22 +8,24 @@
 
     <View
         android:id="@+id/leaderlisttopbar"
+        android:elevation="20dp"
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:background="#25568F"
+        android:background="@drawable/rounded_menu_item"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/title2"
+        android:elevation="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:fontFamily="sans-serif-black"
         android:text="@string/leaderList"
         android:textAlignment="viewStart"
-        android:textColor="@android:color/white"
+        android:textColor="@color/colorAccent"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="@+id/leaderlisttopbar"
         app:layout_constraintStart_toStartOf="parent"
