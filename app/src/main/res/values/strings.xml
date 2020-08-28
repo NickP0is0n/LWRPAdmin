@@ -54,12 +54,12 @@
     <string name="actionStats">Статистика действий</string>
     <string name="admin">Администратор</string>
     <string name="adminLevelText">уровня</string>
-    <string name="gang_map">Gang map</string>
+    <string name="gang_map">Информация о бандах</string>
     <string name="gang_map_description">Количество территорий и состав банд</string>
     <string name="groveStreet">Grove Street</string>
     <string name="territoryCount">Количество территорий</string>
     <string name="ballas">Ballas</string>
-    <string name="lastUpdate">Последнее обновление</string>
+    <string name="lastUpdate">Обновлено</string>
     <string name="aztecas">Aztecas</string>
     <string name="rifa">Rifa</string>
     <string name="vagos">Vagos</string>
