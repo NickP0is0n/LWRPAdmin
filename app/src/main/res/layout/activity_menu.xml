@@ -203,7 +203,7 @@
         android:id="@+id/mainmenubar"
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:background="@android:color/white"
+        android:background="@drawable/rounded_menu_item"
         android:elevation="2dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
