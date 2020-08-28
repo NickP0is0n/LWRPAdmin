@@ -13,7 +13,6 @@ import android.os.Bundle
 import android.view.View
 import android.view.View.INVISIBLE
 import android.view.View.VISIBLE
-import android.view.Window
 import androidx.appcompat.app.AppCompatActivity
 import com.github.javiersantos.appupdater.AppUpdater
 import com.github.javiersantos.appupdater.enums.UpdateFrom
@@ -34,8 +33,6 @@ class MainActivity : AppCompatActivity(), Observer {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        requestWindowFeature(Window.FEATURE_NO_TITLE) //will hide the title
-        supportActionBar?.hide() //hide the title bar
         setContentView(R.layout.activity_main)
         enableAutoUpdater()
     }
