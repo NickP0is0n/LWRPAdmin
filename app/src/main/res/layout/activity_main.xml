@@ -8,6 +8,7 @@
 
     <TextView
         android:id="@+id/textView3"
+        android:elevation="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="200dp"
@@ -25,6 +26,7 @@
 
     <EditText
         android:id="@+id/nameEdit"
+        android:elevation="100dp"
         android:layout_width="350dp"
         android:layout_height="49dp"
         android:layout_marginTop="10dp"
@@ -40,6 +42,7 @@
 
     <EditText
         android:id="@+id/passwordEdit"
+        android:elevation="100dp"
         android:layout_width="350dp"
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
@@ -53,6 +56,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nameEdit" />
 
+    <View
+        android:id="@+id/view2"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/rounded_menu_item"
+        android:elevation="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view" />
+
     <Button
         android:id="@+id/loginButton"
         style="@style/Widget.AppCompat.Button"
@@ -60,7 +76,10 @@
         android:layout_height="45dp"
         android:layout_marginTop="30dp"
         android:background="@drawable/rounded_menu_item"
+        android:elevation="10dp"
+        android:stateListAnimator="@null"
         android:onClick="onLoginButtonClick"
+        android:outlineProvider="bounds"
         android:text="@string/login"
         android:textColor="@color/colorAccent"
         android:textSize="18sp"
