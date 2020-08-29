@@ -8,11 +8,11 @@
 
     <TextView
         android:id="@+id/textView3"
-        android:elevation="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="200dp"
         android:layout_marginBottom="400dp"
+        android:elevation="20dp"
         android:fontFamily="casual"
         android:text="@string/signIn"
         android:textAppearance="@style/TextAppearance.AppCompat.Display3"
@@ -25,43 +25,29 @@
         app:layout_constraintTop_toBottomOf="@+id/view" />
 
     <EditText
-        android:id="@+id/nameEdit"
-        android:elevation="100dp"
-        android:layout_width="350dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="10dp"
-        android:autofillHints="username"
-        android:importantForAutofill="yes"
-        android:ems="10"
-        android:textColorHint="@color/colorAccent"
-        android:hint="@string/nickname"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
-
-    <EditText
         android:id="@+id/passwordEdit"
-        android:elevation="100dp"
-        android:layout_width="350dp"
+        android:layout_width="0dp"
         android:layout_height="50dp"
+        android:layout_marginLeft="5dp"
         android:layout_marginTop="10dp"
+        android:layout_marginRight="5dp"
         android:autofillHints="password"
-        android:importantForAutofill="yes"
+        android:elevation="100dp"
         android:ems="10"
         android:hint="@string/password"
+        android:importantForAutofill="yes"
         android:inputType="textPassword"
         android:textColorHint="@color/colorAccent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/view2"
+        app:layout_constraintStart_toStartOf="@+id/view2"
         app:layout_constraintTop_toBottomOf="@+id/nameEdit" />
 
     <View
         android:id="@+id/view2"
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:background="@drawable/rounded_menu_item"
         android:elevation="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -69,41 +55,61 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view" />
 
+    <EditText
+        android:id="@+id/nameEdit"
+        android:layout_width="0dp"
+        android:layout_height="49dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="5dp"
+        android:autofillHints="username"
+        android:elevation="100dp"
+        android:ems="10"
+        android:hint="@string/nickname"
+        android:importantForAutofill="yes"
+        android:inputType="textPersonName"
+        android:textColorHint="@color/colorAccent"
+        app:layout_constraintEnd_toEndOf="@+id/view2"
+        app:layout_constraintStart_toStartOf="@+id/view2"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
     <Button
         android:id="@+id/loginButton"
         style="@style/Widget.AppCompat.Button"
-        android:layout_width="329dp"
+        android:layout_width="0dp"
         android:layout_height="45dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="30dp"
+        android:layout_marginRight="20dp"
         android:background="@drawable/rounded_menu_item"
         android:elevation="10dp"
-        android:stateListAnimator="@null"
         android:onClick="onLoginButtonClick"
         android:outlineProvider="bounds"
+        android:stateListAnimator="@null"
         android:text="@string/login"
         android:textColor="@color/colorAccent"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/view2"
+        app:layout_constraintStart_toStartOf="@+id/view2"
         app:layout_constraintTop_toBottomOf="@+id/passwordEdit" />
 
     <View
         android:id="@+id/view"
-        android:elevation="10dp"
         android:layout_width="match_parent"
         android:layout_height="307dp"
         android:background="@drawable/rounded_menu_item"
+        android:elevation="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <ImageView
         android:id="@+id/imageView"
-        android:elevation="30dp"
         android:layout_width="144dp"
         android:layout_height="154dp"
         android:layout_marginBottom="30dp"
         android:contentDescription="@string/logoDescription"
+        android:elevation="30dp"
         app:layout_constraintBottom_toBottomOf="@+id/view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/view"
@@ -126,16 +132,21 @@
 
     <ProgressBar
         android:id="@+id/progressBar"
-        android:elevation="20dp"
         style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Large"
         android:layout_width="174dp"
         android:layout_height="184dp"
         android:layout_marginBottom="30dp"
+        android:elevation="20dp"
         android:indeterminateTint="@color/colorAccent"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/view"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
