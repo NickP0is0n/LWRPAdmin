@@ -37,4 +37,5 @@ dependencies {
     implementation 'com.android.volley:volley:1.1.1'
     implementation 'com.github.javiersantos:AppUpdater:2.7'
     testImplementation 'org.json:json:20190722'
+    implementation("io.ipinfo:ipinfo-api:1.1")
 }
