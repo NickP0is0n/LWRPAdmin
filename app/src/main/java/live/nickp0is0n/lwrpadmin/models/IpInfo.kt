@@ -20,7 +20,7 @@ data class IpInfo (val ip: String) {
     init {
         val ipInfoProvider = IPInfo.builder().setToken(ACCESS_TOKEN).build()
         val ipInfoResponse = ipInfoProvider.lookupIP(ip)
-        provider = ipInfoResponse.company.name
+        provider = ipInfoResponse.org
         country = ipInfoResponse.countryCode
         city = ipInfoResponse.city
     }
