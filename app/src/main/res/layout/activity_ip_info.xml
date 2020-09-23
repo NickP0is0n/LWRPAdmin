@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Это - исходный код приложения LWRP Admin v2.x.
+  ~ Данное приложение является пропиетарным ПО и
+  ~ его код не подлежит распространению без согласия автора.
+  ~
+  ~ Copyright Mykola Chaikovskyi, 2020.
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.IpInfoActivity">
+
+    <TextView
+        android:id="@+id/currentData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Текущие данные"
+        android:textAlignment="viewStart"
+        android:textColor="#25568F"
+        android:textSize="24sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/view5"
+        app:layout_constraintTop_toBottomOf="@+id/regProviderLabel" />
+
+    <TextView
+        android:id="@+id/currentCountryLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Страна"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/regData"
+        app:layout_constraintTop_toBottomOf="@+id/currentIpLabel" />
+
+    <TextView
+        android:id="@+id/currentCityLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Город"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/regData"
+        app:layout_constraintTop_toBottomOf="@+id/currentCountryLabel" />
+
+    <TextView
+        android:id="@+id/currentProviderLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Провайдер"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/regData"
+        app:layout_constraintTop_toBottomOf="@+id/currentCityLabel" />
+
+    <TextView
+        android:id="@+id/currentIp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:text="00.00.00.00"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/currentIpLabel" />
+
+    <TextView
+        android:id="@+id/currentCountry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Неизвестно"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="@+id/currentIp"
+        app:layout_constraintTop_toTopOf="@+id/currentCountryLabel" />
+
+    <TextView
+        android:id="@+id/currentCity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Неизвестно"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="@+id/currentCountry"
+        app:layout_constraintTop_toTopOf="@+id/currentCityLabel" />
+
+    <TextView
+        android:id="@+id/currentProvider"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Неизвестно"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="@+id/currentCity"
+        app:layout_constraintTop_toTopOf="@+id/currentProviderLabel" />
+
+    <TextView
+        android:id="@+id/currentIpLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Текущий IP"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/regData"
+        app:layout_constraintTop_toBottomOf="@+id/currentData" />
+
+    <TextView
+        android:id="@+id/regData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Регистрационные данные"
+        android:textAlignment="viewStart"
+        android:textColor="#25568F"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@+id/view5"
+        app:layout_constraintTop_toBottomOf="@+id/view5"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/regIpLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Регистрационный IP"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/regData"
+        app:layout_constraintTop_toBottomOf="@+id/regData" />
+
+    <TextView
+        android:id="@+id/regCountryLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Страна"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/regData"
+        app:layout_constraintTop_toBottomOf="@+id/regIpLabel" />
+
+    <TextView
+        android:id="@+id/regCityLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Город"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/regData"
+        app:layout_constraintTop_toBottomOf="@+id/regCountryLabel" />
+
+    <TextView
+        android:id="@+id/regProviderLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Провайдер"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/regData"
+        app:layout_constraintTop_toBottomOf="@+id/regCityLabel" />
+
+    <TextView
+        android:id="@+id/regIp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:text="00.00.00.00"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/regIpLabel" />
+
+    <TextView
+        android:id="@+id/regCountry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Неизвестно"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="@+id/regIp"
+        app:layout_constraintTop_toTopOf="@+id/regCountryLabel" />
+
+    <TextView
+        android:id="@+id/regCity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Неизвестно"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="@+id/regCountry"
+        app:layout_constraintTop_toTopOf="@+id/regCityLabel" />
+
+    <TextView
+        android:id="@+id/regProvider"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Неизвестно"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="@+id/regCity"
+        app:layout_constraintTop_toTopOf="@+id/regProviderLabel" />
+
+    <View
+        android:id="@+id/view5"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/rounded_menu_item"
+        android:elevation="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/leaderlisttopbar3" />
+
+    <EditText
+        android:id="@+id/nameEdit3"
+        android:layout_width="0dp"
+        android:layout_height="49dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="10dp"
+        android:autofillHints="username"
+        android:elevation="100dp"
+        android:ems="10"
+        android:hint="@string/nickname"
+        android:importantForAutofill="yes"
+        android:inputType="textPersonName"
+        android:textColorHint="@color/colorAccent"
+        app:layout_constraintEnd_toEndOf="@+id/view5"
+        app:layout_constraintStart_toStartOf="@+id/view5"
+        app:layout_constraintTop_toTopOf="@+id/view5" />
+
+    <Button
+        android:id="@+id/loginButton2"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/rounded_menu_item"
+        android:elevation="10dp"
+        android:onClick="onRetrieveInfoButtonClick"
+        android:outlineProvider="bounds"
+        android:stateListAnimator="@null"
+        android:text="@string/retrieveInfo"
+        android:textColor="@color/colorAccent"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/view5"
+        app:layout_constraintEnd_toEndOf="@+id/view5"
+        app:layout_constraintStart_toStartOf="@+id/view5"
+        app:layout_constraintTop_toBottomOf="@+id/nameEdit3" />
+
+    <View
+        android:id="@+id/leaderlisttopbar3"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@drawable/rounded_menu_item"
+        android:elevation="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/title12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:elevation="20dp"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/ipInfo"
+        android:textAlignment="viewStart"
+        android:textColor="@color/colorAccent"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/leaderlisttopbar3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

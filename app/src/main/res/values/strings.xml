@@ -63,6 +63,8 @@
     <string name="aztecas">Aztecas</string>
     <string name="rifa">Rifa</string>
     <string name="vagos">Vagos</string>
+    <string name="ipInfo">Информация об IP</string>
+    <string name="retrieveInfo">Получить информацию</string>
     <string-array name="fractionNames">
         <item>-</item>
         <item>LSPD</item>
