@@ -14,5 +14,6 @@ enum class QueryType {
     ADMIN_INFO,
     CREDENTIALS,
     GANG_MAP,
+    IP_INFO,
     OTHER
 }
