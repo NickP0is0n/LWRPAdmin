@@ -76,6 +76,7 @@ class MenuActivity : AppCompatActivity(), Observer {
         val intent = Intent(this, IpInfoActivity::class.java)
         intent.putExtra("user", user)
         intent.putExtra("adminInfo", admin)
+        intent.putExtra("queryClient", queryClient)
         startActivity(intent)
     }
 

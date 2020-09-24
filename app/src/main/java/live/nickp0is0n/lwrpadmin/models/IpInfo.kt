@@ -8,20 +8,18 @@
 
 package live.nickp0is0n.lwrpadmin.models
 
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import io.ipinfo.api.IPInfo
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.async
 
-data class IpInfo (val ip: String) {
-    val provider: String
-    val country: String
-    val city: String
+data class IpInfo (val ip: String): ViewModel() {
+    lateinit var provider: String
+    lateinit var country: String
+    lateinit var city: String
 
-    val ACCESS_TOKEN = "7aa3f036a9508e"
+    private val TOKEN = "7aa3f036a9508e"
 
-    init {
-        val ipInfoProvider = IPInfo.builder().setToken(ACCESS_TOKEN).build()
-        val ipInfoResponse = ipInfoProvider.lookupIP(ip)
-        provider = ipInfoResponse.org
-        country = ipInfoResponse.countryCode
-        city = ipInfoResponse.city
-    }
+    val infoProvider: IPInfo = IPInfo.builder().setToken(TOKEN).build()
 }

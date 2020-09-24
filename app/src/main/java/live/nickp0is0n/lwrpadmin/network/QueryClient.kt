@@ -9,13 +9,16 @@
 package live.nickp0is0n.lwrpadmin.network
 
 import android.content.Context
+import android.os.Parcelable
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import kotlinx.android.parcel.Parcelize
 import org.json.JSONArray
 import org.json.JSONObject
 
-class QueryClient(val basicUrl: String, val globalParams: HashMap<String, String>) {
+@Parcelize
+class QueryClient(val basicUrl: String, val globalParams: HashMap<String, String>) : Parcelable {
     fun executeQuery(context: Context, scriptPath: String, localParams: HashMap<String, String>? = null, dataReceiver: DataReceiver, isResponseArray: Boolean = false) {
         val queue = Volley.newRequestQueue(context)
         var result: Any?
