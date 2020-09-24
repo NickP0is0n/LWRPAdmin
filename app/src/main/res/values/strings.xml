@@ -65,6 +65,16 @@
     <string name="vagos">Vagos</string>
     <string name="ipInfo">Информация об IP</string>
     <string name="retrieveInfo">Получить информацию</string>
+    <string name="currentData">Текущие данные</string>
+    <string name="unknown">Неизвестно</string>
+    <string name="country">Страна</string>
+    <string name="city">Город</string>
+    <string name="provider">Провайдер</string>
+    <string name="defaultIp">00.00.00.00</string>
+    <string name="currentIp">Текущий IP</string>
+    <string name="regData">Регистрационные данные</string>
+    <string name="regIp">Регистрационный IP</string>
+    <string name="ip_info_description">Данные о регистрационном и текущем IP</string>
     <string-array name="fractionNames">
         <item>-</item>
         <item>LSPD</item>

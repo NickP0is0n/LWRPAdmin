@@ -72,6 +72,13 @@ class MenuActivity : AppCompatActivity(), Observer {
         startActivity(intent)
     }
 
+    fun onIpInfoButtonClick(view: View) {
+        val intent = Intent(this, IpInfoActivity::class.java)
+        intent.putExtra("user", user)
+        intent.putExtra("adminInfo", admin)
+        startActivity(intent)
+    }
+
     fun onMyStatsButtonClick(view: View) {
         val intent = Intent(this, StatsActivity::class.java)
         intent.putExtra("user", user)
