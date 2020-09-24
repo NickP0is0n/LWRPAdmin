@@ -32,14 +32,13 @@ class IpInfoReceiver : DataReceiver, ViewModel() {
                     IpInfo((data.getString("pGetonIP"))))
                 ipList?.forEach {
                     val response = it.infoProvider.lookupIP(it.ip)
-                    it.provider = response.org
+                    it.provider = response.org.substring(7)
                     it.country = response.countryCode
                     it.city = response.city
                 }
                 notifier.notifyObserver()
             }
         }
-        notifier.notifyObserver()
     }
 
     override fun errorCallback(text: String) {

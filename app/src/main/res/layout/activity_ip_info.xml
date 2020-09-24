@@ -14,19 +14,6 @@
     android:layout_height="match_parent"
     tools:context=".ui.IpInfoActivity">
 
-    <ProgressBar
-        android:id="@+id/progressBar4"
-        style="@style/Widget.AppCompat.ProgressBar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="20dp"
-        android:elevation="10dp"
-        android:indeterminateTint="@color/colorAccent"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="@+id/leaderlisttopbar3"
-        app:layout_constraintEnd_toEndOf="@+id/leaderlisttopbar3"
-        app:layout_constraintTop_toTopOf="@+id/leaderlisttopbar3" />
-
     <TextView
         android:id="@+id/currentData"
         android:layout_width="wrap_content"
@@ -38,7 +25,7 @@
         android:textColor="#25568F"
         android:textSize="24sp"
         android:visibility="invisible"
-        app:layout_constraintStart_toStartOf="@+id/view5"
+        app:layout_constraintStart_toStartOf="@+id/regData"
         app:layout_constraintTop_toBottomOf="@+id/regProviderLabel" />
 
     <TextView
@@ -142,15 +129,16 @@
         android:id="@+id/regData"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="15dp"
         android:fontFamily="sans-serif-black"
         android:text="@string/regData"
         android:textAlignment="viewStart"
         android:textColor="#25568F"
         android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="@+id/view5"
-        app:layout_constraintTop_toBottomOf="@+id/view5"
-        android:visibility="invisible" />
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view5" />
 
     <TextView
         android:id="@+id/regIpLabel"
@@ -260,7 +248,7 @@
         android:elevation="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/leaderlisttopbar3" />
+        app:layout_constraintTop_toBottomOf="@+id/ipinfotopbar" />
 
     <EditText
         android:id="@+id/nameEdit3"
@@ -301,7 +289,7 @@
         app:layout_constraintTop_toBottomOf="@+id/nameEdit3" />
 
     <View
-        android:id="@+id/leaderlisttopbar3"
+        android:id="@+id/ipinfotopbar"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:background="@drawable/rounded_menu_item"
@@ -322,7 +310,21 @@
         android:textAlignment="viewStart"
         android:textColor="@color/colorAccent"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@+id/leaderlisttopbar3"
+        app:layout_constraintBottom_toBottomOf="@+id/ipinfotopbar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/progressBar4"
+        style="@style/Widget.AppCompat.ProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:elevation="20dp"
+        android:indeterminateTint="@color/colorAccent"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/ipinfotopbar"
+        app:layout_constraintEnd_toEndOf="@+id/ipinfotopbar"
+        app:layout_constraintTop_toTopOf="@+id/ipinfotopbar" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,6 +8,7 @@
 
 package live.nickp0is0n.lwrpadmin.ui
 
+import android.animation.ObjectAnimator
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
@@ -36,6 +37,7 @@ class IpInfoActivity : AppCompatActivity(), Observer {
         user = intent.extras?.get("user") as User
         admin = intent.extras?.get("adminInfo") as Admin
         queryClient = intent.extras?.get("queryClient") as QueryClient
+        playTopBarAnimation()
     }
 
     override fun update(status: QueryStatus, resultType: QueryType) {
@@ -108,6 +110,14 @@ class IpInfoActivity : AppCompatActivity(), Observer {
 
             regData.visibility = View.VISIBLE
             currentData.visibility = View.VISIBLE
+        }
+    }
+
+    private fun playTopBarAnimation() {
+        ipinfotopbar.x -= 1000f
+        ObjectAnimator.ofFloat(ipinfotopbar, "translationX", 0f).apply {
+            duration = 2000
+            start()
         }
     }
 }
