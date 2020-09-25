@@ -24,24 +24,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view" />
 
-    <EditText
-        android:id="@+id/passwordEdit"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="5dp"
-        android:autofillHints="password"
-        android:elevation="100dp"
-        android:ems="10"
-        android:hint="@string/password"
-        android:importantForAutofill="yes"
-        android:inputType="textPassword"
-        android:textColorHint="@color/colorAccent"
-        app:layout_constraintEnd_toEndOf="@+id/view2"
-        app:layout_constraintStart_toStartOf="@+id/view2"
-        app:layout_constraintTop_toBottomOf="@+id/nameEdit" />
-
     <View
         android:id="@+id/view2"
         android:layout_width="match_parent"
@@ -54,24 +36,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view" />
-
-    <EditText
-        android:id="@+id/nameEdit"
-        android:layout_width="0dp"
-        android:layout_height="49dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="5dp"
-        android:autofillHints="username"
-        android:elevation="100dp"
-        android:ems="10"
-        android:hint="@string/nickname"
-        android:importantForAutofill="yes"
-        android:inputType="textPersonName"
-        android:textColorHint="@color/colorAccent"
-        app:layout_constraintEnd_toEndOf="@+id/view2"
-        app:layout_constraintStart_toStartOf="@+id/view2"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <Button
         android:id="@+id/loginButton"
@@ -143,6 +107,42 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/view"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/nameEdit"
+        android:layout_width="0dp"
+        android:layout_height="49dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:autofillHints="username"
+        android:elevation="5dp"
+        android:ems="10"
+        android:hint="@string/nickname"
+        android:importantForAutofill="yes"
+        android:inputType="textPersonName"
+        android:textColorHint="@color/colorAccent"
+        app:layout_constraintEnd_toEndOf="@+id/view2"
+        app:layout_constraintStart_toStartOf="@+id/view2"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <EditText
+        android:id="@+id/passwordEdit"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:autofillHints="password"
+        android:elevation="5dp"
+        android:ems="10"
+        android:hint="@string/password"
+        android:importantForAutofill="yes"
+        android:inputType="textPassword"
+        android:textColorHint="@color/colorAccent"
+        app:layout_constraintEnd_toEndOf="@+id/view2"
+        app:layout_constraintStart_toStartOf="@+id/view2"
+        app:layout_constraintTop_toBottomOf="@+id/nameEdit" />
 
     <androidx.constraintlayout.widget.Group
         android:id="@+id/group"
