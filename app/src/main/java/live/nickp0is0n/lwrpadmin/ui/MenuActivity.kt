@@ -44,7 +44,7 @@ class MenuActivity : AppCompatActivity(), Observer {
 
     override fun update(status: QueryStatus, resultType: QueryType) {
         if (status == QueryStatus.ERROR) {
-            Toast.makeText(this@MenuActivity, "Ошибка сервера, повторите позже.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this@MenuActivity, getString(R.string.server_error), Toast.LENGTH_SHORT).show()
             progressBar2.visibility = INVISIBLE
             return
         }
@@ -52,7 +52,7 @@ class MenuActivity : AppCompatActivity(), Observer {
             QueryType.LEADER_LIST -> loadLeaders()
             QueryType.ADMIN_LIST -> loadAdmins()
             QueryType.GANG_MAP -> loadGangMap()
-            else -> Toast.makeText(this@MenuActivity, "Ошибка сервера, повторите позже.", Toast.LENGTH_SHORT).show()
+            else -> Toast.makeText(this@MenuActivity, getString(R.string.server_error), Toast.LENGTH_SHORT).show()
         }
     }
 

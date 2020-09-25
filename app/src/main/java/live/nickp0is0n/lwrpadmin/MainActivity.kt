@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity(), Observer {
 
     override fun update(status: QueryStatus, resultType: QueryType) {
         if (status == QueryStatus.ERROR) {
-            nameEdit.error = "Ошибка сервера, повторите позже"
+            nameEdit.error = getString(R.string.server_error)
             progressBar.visibility = INVISIBLE
             return
         }
@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity(), Observer {
             QueryType.CREDENTIALS -> updateCredentials()
             QueryType.ADMIN_INFO -> updateAdminInfo()
             else -> {
-                nameEdit.error = "Ошибка сервера, повторите позже"
+                nameEdit.error = getString(R.string.server_error)
                 progressBar.visibility = INVISIBLE
             }
         }

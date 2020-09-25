@@ -63,7 +63,7 @@ class AdminPasswordChangeActivity : AppCompatActivity() {
                 }
             },
             Response.ErrorListener {
-                nameEdit.error = "Ошибка сервера, повторите позже"
+                nameEdit.error = getString(R.string.server_error)
                 progressBar3.visibility = INVISIBLE
             }) {
             override fun getParams(): MutableMap<String, String> {

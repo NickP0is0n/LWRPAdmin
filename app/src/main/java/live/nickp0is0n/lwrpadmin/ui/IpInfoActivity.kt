@@ -62,7 +62,7 @@ class IpInfoActivity : AppCompatActivity(), Observer {
     private fun loadIpInfo() {
         val ipInfoList = receiver.getData()
         if (ipInfoList == null) {
-            Toast.makeText(this@IpInfoActivity, "Данного игрока не существует в базе.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this@IpInfoActivity, getString(R.string.player_not_found), Toast.LENGTH_SHORT).show()
             progressBar4.visibility = View.INVISIBLE
         }
         else {
