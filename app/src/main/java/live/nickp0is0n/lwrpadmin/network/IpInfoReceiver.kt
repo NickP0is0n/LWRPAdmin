@@ -26,7 +26,7 @@ class IpInfoReceiver : DataReceiver, ViewModel() {
         this.data = data as JSONObject
         notifier.resultType = QueryType.IP_INFO
         notifier.status = QueryStatus.SUCCESS
-        val job = viewModelScope.launch(Dispatchers.IO) {
+        viewModelScope.launch(Dispatchers.IO) {
             if (data.getString("pGetonIP") != "null") {
                 ipList = listOf(IpInfo(data.getString("pIpReg")),
                     IpInfo((data.getString("pGetonIP"))))
@@ -36,8 +36,8 @@ class IpInfoReceiver : DataReceiver, ViewModel() {
                     it.country = response.countryCode
                     it.city = response.city
                 }
-                notifier.notifyObserver()
             }
+            notifier.notifyObserver()
         }
     }
 

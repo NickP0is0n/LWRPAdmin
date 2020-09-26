@@ -62,8 +62,10 @@ class IpInfoActivity : AppCompatActivity(), Observer {
     private fun loadIpInfo() {
         val ipInfoList = receiver.getData()
         if (ipInfoList == null) {
-            Toast.makeText(this@IpInfoActivity, getString(R.string.player_not_found), Toast.LENGTH_SHORT).show()
-            progressBar4.visibility = View.INVISIBLE
+            runOnUiThread{
+                Toast.makeText(this@IpInfoActivity, getString(R.string.player_not_found), Toast.LENGTH_SHORT).show()
+                progressBar4.visibility = View.INVISIBLE
+            }
         }
         else {
             displayIpInfo(ipInfoList)
