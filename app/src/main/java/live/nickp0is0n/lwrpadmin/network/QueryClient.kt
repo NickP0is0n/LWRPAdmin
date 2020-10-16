@@ -37,8 +37,11 @@ class QueryClient(val basicUrl: String, val globalParams: HashMap<String, String
             }) {
             override fun getParams(): MutableMap<String, String> {
                 val headers = globalParams.clone() as HashMap<String, String>
-                localParams?.forEach { index, value ->
+                /*localParams?.forEach { index, value ->
                     headers[index] = value
+                }*/
+                if (localParams != null) {
+                    headers.putAll(localParams)
                 }
                 return headers
             }
