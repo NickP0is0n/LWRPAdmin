@@ -9,7 +9,9 @@
 package live.nickp0is0n.lwrpadmin
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
+import android.provider.Settings
 import android.view.View
 import android.view.View.INVISIBLE
 import android.view.View.VISIBLE
@@ -20,6 +22,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import live.nickp0is0n.lwrpadmin.models.Admin
 import live.nickp0is0n.lwrpadmin.models.User
 import live.nickp0is0n.lwrpadmin.network.*
+import live.nickp0is0n.lwrpadmin.service.Crypto
 import live.nickp0is0n.lwrpadmin.service.Observer
 import live.nickp0is0n.lwrpadmin.service.QueryStatus
 import live.nickp0is0n.lwrpadmin.ui.MenuActivity
@@ -28,6 +31,8 @@ class MainActivity : AppCompatActivity(), Observer {
 
     private var user: User = User("sample", "sample")
 
+    private lateinit var accountPreferences: SharedPreferences
+
     private lateinit var receiver: DataReceiver
     private lateinit var queryClient: QueryClient
 
@@ -35,6 +40,14 @@ class MainActivity : AppCompatActivity(), Observer {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         enableAutoUpdater()
+        accountPreferences = getSharedPreferences("account", MODE_PRIVATE)
+        if (accountPreferences.contains("username")) {
+            nameEdit.setText(accountPreferences.getString("username", "null"))
+            val password = getPassword()
+            passwordEdit.setText(password)
+            progressBar.visibility = VISIBLE
+            checkCredentials()
+        }
     }
 
     override fun update(status: QueryStatus, resultType: QueryType) {
@@ -106,7 +119,27 @@ class MainActivity : AppCompatActivity(), Observer {
             nameEdit.error = "Данный пользователь не является администратором сервера"
             progressBar.visibility = View.INVISIBLE
         }
-        else loadStatsForm(admin as Admin)
+        else {
+            if (rememberMeBox.isChecked) {
+                savePassword()
+            }
+            loadStatsForm(admin as Admin)
+        }
+    }
+
+    private fun savePassword() {
+        val editor = accountPreferences.edit()
+        val deviceId = Settings.Secure.getString(applicationContext.contentResolver, Settings.Secure.ANDROID_ID)
+        val cryptoAgent = Crypto(deviceId)
+        editor.putString("username", user.nickname)
+            .putString("password", Crypto.byteArrayToHexString(cryptoAgent.encrypt(user.password.trim()))).apply()
+    }
+
+    private fun getPassword() : String {
+        val deviceId = Settings.Secure.getString(applicationContext.contentResolver, Settings.Secure.ANDROID_ID)
+        val cryptoAgent = Crypto(deviceId)
+        val encryptedPassword = accountPreferences.getString("password", "null")!!.trim()
+        return String(cryptoAgent.decrypt(encryptedPassword)).filter { it.isLetterOrDigit() }
     }
 
     private fun getGlobalQueryVariables() : HashMap<String, String> {
