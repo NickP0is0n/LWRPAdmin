@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="@color/colorBackground"
     tools:context=".ui.LeaderInfoActivity">
 
     <TextView
@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="@string/experience"
-        android:textColor="@android:color/black"
+        android:textColor="@color/colorText"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="@+id/textView15"
         app:layout_constraintTop_toBottomOf="@+id/textView23" />
@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="20dp"
         android:text="@string/defaultExperience"
-        android:textColor="@android:color/black"
+        android:textColor="@color/colorText"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -36,7 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="@string/level"
-        android:textColor="@android:color/black"
+        android:textColor="@color/colorText"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="@+id/textView15"
         app:layout_constraintTop_toBottomOf="@+id/textView19" />
@@ -47,7 +47,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="20dp"
         android:text="@string/defaultLevel"
-        android:textColor="@android:color/black"
+        android:textColor="@color/colorText"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -59,7 +59,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="@string/fractionPlayers"
-        android:textColor="@android:color/black"
+        android:textColor="@color/colorText"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="@+id/textView15"
         app:layout_constraintTop_toBottomOf="@+id/textView17" />
@@ -70,7 +70,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="20dp"
         android:text="@string/defaultFractionPlayers"
-        android:textColor="@android:color/black"
+        android:textColor="@color/colorText"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -147,7 +147,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="@string/status"
-        android:textColor="@android:color/black"
+        android:textColor="@color/colorText"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="@+id/gametime2"
         app:layout_constraintTop_toBottomOf="@+id/gametime2" />
@@ -158,7 +158,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="20dp"
         android:text="@string/defaultGetonDate"
-        android:textColor="@android:color/black"
+        android:textColor="@color/colorText"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -182,7 +182,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="@string/getonDate"
-        android:textColor="@android:color/black"
+        android:textColor="@color/colorText"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="@+id/textView15"
         app:layout_constraintTop_toBottomOf="@+id/textView15" />
