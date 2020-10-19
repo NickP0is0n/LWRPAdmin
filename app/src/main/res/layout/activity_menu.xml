@@ -23,6 +23,32 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view9" />
 
+    <View
+        android:id="@+id/view16"
+        android:layout_width="match_parent"
+        android:layout_height="74dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/rounded_menu_item"
+        android:elevation="8dp"
+        android:onClick="onExitButtonClick"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view10" />
+
+    <TextView
+        android:id="@+id/textView36"
+        android:layout_width="308dp"
+        android:layout_height="19dp"
+        android:elevation="10dp"
+        android:text="Выйти из аккаунта"
+        android:textColor="@color/colorAccent"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/title17"
+        app:layout_constraintTop_toBottomOf="@+id/title17" />
+
     <TextView
         android:id="@+id/textView25"
         android:layout_width="308dp"
@@ -91,6 +117,22 @@
         app:layout_constraintBottom_toBottomOf="@+id/view9"
         app:layout_constraintStart_toStartOf="@+id/view9"
         app:layout_constraintTop_toTopOf="@+id/view9" />
+
+    <TextView
+        android:id="@+id/title17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="30dp"
+        android:elevation="10dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Выход"
+        android:textAlignment="viewStart"
+        android:textColor="@color/colorAccent"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/view16"
+        app:layout_constraintStart_toStartOf="@+id/view16"
+        app:layout_constraintTop_toTopOf="@+id/view16" />
 
     <TextView
         android:id="@+id/textView27"

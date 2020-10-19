@@ -17,6 +17,7 @@ import android.view.View.VISIBLE
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_menu.*
+import live.nickp0is0n.lwrpadmin.MainActivity
 import live.nickp0is0n.lwrpadmin.R
 import live.nickp0is0n.lwrpadmin.models.Admin
 import live.nickp0is0n.lwrpadmin.models.GangMap
@@ -54,6 +55,14 @@ class MenuActivity : AppCompatActivity(), Observer {
             QueryType.GANG_MAP -> loadGangMap()
             else -> Toast.makeText(this@MenuActivity, getString(R.string.server_error), Toast.LENGTH_SHORT).show()
         }
+    }
+
+    fun onExitButtonClick(view: View) {
+        val accountPreferences = getSharedPreferences("account", MODE_PRIVATE)
+        val editor = accountPreferences.edit()
+        editor.remove("username").remove("password").apply()
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
     }
 
     fun onLeaderListButtonClick(view: View) {
