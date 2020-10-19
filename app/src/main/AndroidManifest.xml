@@ -12,15 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.IpInfoActivity"></activity>
-        <activity android:name=".ui.GangMapActivity" />
-        <activity android:name=".ui.AdminListActivity" />
-        <activity android:name=".ui.AdminPasswordChangeActivity" />
-        <activity android:name=".ui.LeaderInfoActivity" />
-        <activity android:name=".ui.LeaderListActivity" />
-        <activity android:name=".ui.MenuActivity" />
-        <activity android:name=".ui.StatsActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".ui.IpInfoActivity" android:screenOrientation="portrait" />
+        <activity android:name=".ui.GangMapActivity" android:screenOrientation="portrait" />
+        <activity android:name=".ui.AdminListActivity" android:screenOrientation="portrait" />
+        <activity android:name=".ui.AdminPasswordChangeActivity" android:screenOrientation="portrait" />
+        <activity android:name=".ui.LeaderInfoActivity" android:screenOrientation="portrait" />
+        <activity android:name=".ui.LeaderListActivity" android:screenOrientation="portrait" />
+        <activity android:name=".ui.MenuActivity" android:screenOrientation="portrait" />
+        <activity android:name=".ui.StatsActivity" android:screenOrientation="portrait" />
+        <activity android:name=".MainActivity" android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
