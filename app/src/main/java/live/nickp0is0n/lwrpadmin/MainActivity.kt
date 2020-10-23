@@ -43,18 +43,7 @@ class MainActivity : AppCompatActivity(), Observer {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         enableAutoUpdater()
-        accountPreferences = getSharedPreferences("account", Context.MODE_PRIVATE)
-        designPreferences = getSharedPreferences("design", Context.MODE_PRIVATE)
-        if (accountPreferences.contains("username")) {
-            nameEdit.setText(accountPreferences.getString("username", "null"))
-            val password = getPassword()
-            passwordEdit.setText(password)
-            progressBar.visibility = VISIBLE
-            checkCredentials()
-        }
-        if (designPreferences.contains("DarkMode")) {
-            AppCompatDelegate.setDefaultNightMode(designPreferences.getInt("DarkMode", 0))
-        }
+        loadAppPreferences()
     }
 
     override fun update(status: QueryStatus, resultType: QueryType) {
@@ -88,6 +77,21 @@ class MainActivity : AppCompatActivity(), Observer {
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
             }
             editor.putInt("DarkMode", AppCompatDelegate.getDefaultNightMode()).apply()
+        }
+    }
+
+    private fun loadAppPreferences() {
+        accountPreferences = getSharedPreferences("account", Context.MODE_PRIVATE)
+        designPreferences = getSharedPreferences("design", Context.MODE_PRIVATE)
+        if (accountPreferences.contains("username")) {
+            nameEdit.setText(accountPreferences.getString("username", "null"))
+            val password = getPassword()
+            passwordEdit.setText(password)
+            progressBar.visibility = VISIBLE
+            checkCredentials()
+        }
+        if (designPreferences.contains("DarkMode")) {
+            AppCompatDelegate.setDefaultNightMode(designPreferences.getInt("DarkMode", 0))
         }
     }
 
