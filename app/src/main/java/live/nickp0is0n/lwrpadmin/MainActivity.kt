@@ -8,6 +8,7 @@
 
 package live.nickp0is0n.lwrpadmin
 
+import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
@@ -16,6 +17,7 @@ import android.view.View
 import android.view.View.INVISIBLE
 import android.view.View.VISIBLE
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import com.github.javiersantos.appupdater.AppUpdater
 import com.github.javiersantos.appupdater.enums.UpdateFrom
 import kotlinx.android.synthetic.main.activity_main.*
@@ -32,6 +34,7 @@ class MainActivity : AppCompatActivity(), Observer {
     private var user: User = User("sample", "sample")
 
     private lateinit var accountPreferences: SharedPreferences
+    private lateinit var designPreferences: SharedPreferences
 
     private lateinit var receiver: DataReceiver
     private lateinit var queryClient: QueryClient
@@ -40,13 +43,17 @@ class MainActivity : AppCompatActivity(), Observer {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         enableAutoUpdater()
-        accountPreferences = getSharedPreferences("account", MODE_PRIVATE)
+        accountPreferences = getSharedPreferences("account", Context.MODE_PRIVATE)
+        designPreferences = getSharedPreferences("design", Context.MODE_PRIVATE)
         if (accountPreferences.contains("username")) {
             nameEdit.setText(accountPreferences.getString("username", "null"))
             val password = getPassword()
             passwordEdit.setText(password)
             progressBar.visibility = VISIBLE
             checkCredentials()
+        }
+        if (designPreferences.contains("DarkMode")) {
+            AppCompatDelegate.setDefaultNightMode(designPreferences.getInt("DarkMode", 0))
         }
     }
 
@@ -69,6 +76,19 @@ class MainActivity : AppCompatActivity(), Observer {
     fun onLoginButtonClick(view: View) {
         progressBar.visibility = VISIBLE
         checkCredentials()
+    }
+
+    fun onDarkThemeSwitchStateChanged(view: View) {
+        if (darkThemeSwitch != null) {
+            val editor = designPreferences.edit()
+            when (darkThemeSwitch.isChecked) {
+                true ->
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                false ->
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+            }
+            editor.putInt("DarkMode", AppCompatDelegate.getDefaultNightMode()).apply()
+        }
     }
 
     private fun enableAutoUpdater() {

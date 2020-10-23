@@ -150,6 +150,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:elevation="8dp"
+        android:onClick="onDarkThemeSwitchStateChanged"
         android:text="Тёмная тема"
         android:textColor="@color/colorAccent"
         app:layout_constraintBottom_toTopOf="@+id/loginButton"
