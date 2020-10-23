@@ -91,7 +91,15 @@ class MainActivity : AppCompatActivity(), Observer {
             checkCredentials()
         }
         if (designPreferences.contains("DarkMode")) {
-            AppCompatDelegate.setDefaultNightMode(designPreferences.getInt("DarkMode", 0))
+            val darkModeState = designPreferences.getInt("DarkMode", 0)
+            AppCompatDelegate.setDefaultNightMode(darkModeState)
+            if (darkThemeSwitch != null) {
+                when (darkModeState) {
+                    AppCompatDelegate.MODE_NIGHT_YES -> darkThemeSwitch.isChecked = true
+                    AppCompatDelegate.MODE_NIGHT_NO -> darkThemeSwitch.isChecked = false
+                }
+            }
+
         }
     }
 
