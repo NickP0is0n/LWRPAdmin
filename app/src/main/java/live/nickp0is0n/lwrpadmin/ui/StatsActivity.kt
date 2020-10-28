@@ -51,13 +51,13 @@ class StatsActivity : AppCompatActivity() {
     }
 
     private fun initializeOnlineTimes(admin: Admin) {
-        monday.text = "${admin.mondayOnline / 60 / 60} часов ${(admin.mondayOnline / 60) % 60} минут"
-        tuesday.text = "${admin.tuesdayOnline / 60 / 60} часов ${(admin.tuesdayOnline / 60) % 60} минут"
-        wednesday.text = "${admin.wednesdayOnline / 60 / 60} часов ${(admin.wednesdayOnline / 60) % 60} минут"
-        thursday.text = "${admin.thursdayOnline / 60 / 60} часов ${(admin.thursdayOnline / 60) % 60} минут"
-        friday.text = "${admin.fridayOnline / 60 / 60} часов ${(admin.fridayOnline / 60) % 60} минут"
-        saturday.text = "${admin.saturdayOnline / 60 / 60} часов ${(admin.saturdayOnline / 60) % 60} минут"
-        sunday.text = "${admin.sundayOnline / 60 / 60} часов ${(admin.sundayOnline / 60) % 60} минут"
+        monday.text = getString(R.string.time_template, admin.mondayOnline / 60 / 60, (admin.mondayOnline / 60) % 60)
+        tuesday.text = getString(R.string.time_template, admin.tuesdayOnline / 60 / 60, (admin.tuesdayOnline / 60) % 60)
+        wednesday.text = getString(R.string.time_template, admin.wednesdayOnline / 60 / 60, (admin.wednesdayOnline / 60) % 60)
+        thursday.text = getString(R.string.time_template, admin.thursdayOnline / 60 / 60, (admin.thursdayOnline / 60) % 60)
+        friday.text = getString(R.string.time_template, admin.fridayOnline / 60 / 60, (admin.fridayOnline / 60) % 60)
+        saturday.text = getString(R.string.time_template, admin.saturdayOnline / 60 / 60, (admin.saturdayOnline / 60) % 60)
+        sunday.text = getString(R.string.time_template, admin.sundayOnline / 60 / 60, (admin.sundayOnline / 60) % 60)
         if(checkRequiredTime(admin)) gametimeNorm.visibility = VISIBLE
     }
 
