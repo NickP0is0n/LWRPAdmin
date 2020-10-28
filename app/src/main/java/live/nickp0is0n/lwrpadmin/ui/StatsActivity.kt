@@ -73,9 +73,9 @@ class StatsActivity : AppCompatActivity() {
     }
 
     private fun initializeExecution(admin: Admin) {
-        reportCount.text = "${admin.reportsAnswered} раз"
-        muteCount.text = "${admin.muted} раз"
-        jailCount.text = "${admin.jailed} раз"
+        reportCount.text = getString(R.string.count_template, admin.reportsAnswered)
+        muteCount.text = getString(R.string.count_template, admin.muted)
+        jailCount.text = getString(R.string.count_template, admin.jailed)
         warnCount.text = "${admin.pAvig}/3"
     }
 }

@@ -78,6 +78,9 @@
     <string name="server_error">Помилка сервера, спробуйте пізніше.</string>
     <string name="player_not_found">Даного гравця не існує.</string>
     <string name="time_template">%d годин %d хвилин</string>
+    <string name="count_template">%d раз</string>
+    <string name="wrong_pass">Неправильный логін чи пароль</string>
+    <string name="not_an_admin">Даний користувач не є адміністратором сервера</string>
     <string-array name="fractionNames">
         <item>-</item>
         <item>LSPD</item>

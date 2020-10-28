@@ -136,7 +136,7 @@ class MainActivity : AppCompatActivity(), Observer {
     private fun updateCredentials() {
         val user = receiver.getData()
         if (user == null) {
-            nameEdit.error = "Неправильный логин или пароль"
+            nameEdit.error = getString(R.string.wrong_pass)
             progressBar.visibility = View.INVISIBLE
         }
         else {
@@ -148,7 +148,7 @@ class MainActivity : AppCompatActivity(), Observer {
     private fun updateAdminInfo() {
         val admin = receiver.getData()
         if (admin == null) {
-            nameEdit.error = "Данный пользователь не является администратором сервера"
+            nameEdit.error = getString(R.string.wrong_pass)
             progressBar.visibility = View.INVISIBLE
         }
         else {

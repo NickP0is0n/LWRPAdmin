@@ -78,6 +78,9 @@
     <string name="server_error">Ошибка сервера, повторите позже.</string>
     <string name="player_not_found">Данного игрока не существует в базе.</string>
     <string name="time_template">%d часов %d минут</string>
+    <string name="count_template">%d раз</string>
+    <string name="wrong_pass">Неправильный логин или пароль</string>
+    <string name="not_an_admin">Данный пользователь не является администратором сервера</string>
     <string-array name="fractionNames">
         <item>-</item>
         <item>LSPD</item>
