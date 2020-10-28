@@ -81,6 +81,8 @@
     <string name="count_template">%d раз</string>
     <string name="wrong_pass">Неправильный логін чи пароль</string>
     <string name="not_an_admin">Даний користувач не є адміністратором сервера</string>
+    <string name="exit">Вихід</string>
+    <string name="exit_description">Вийти з аккаунту</string>
     <string-array name="fractionNames">
         <item>-</item>
         <item>LSPD</item>
