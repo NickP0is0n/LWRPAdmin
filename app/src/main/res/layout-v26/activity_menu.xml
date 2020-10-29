@@ -9,287 +9,6 @@
     tools:context=".ui.MenuActivity">
 
     <View
-        android:id="@+id/view10"
-        android:layout_width="match_parent"
-        android:layout_height="65dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="15dp"
-        android:background="@drawable/rounded_menu_item"
-        android:elevation="8dp"
-        android:onClick="onIpInfoButtonClick"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.533"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view9" />
-
-    <View
-        android:id="@+id/view16"
-        android:layout_width="match_parent"
-        android:layout_height="65dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="15dp"
-        android:background="@drawable/rounded_menu_item"
-        android:elevation="8dp"
-        android:onClick="onExitButtonClick"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.333"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view10" />
-
-    <TextView
-        android:id="@+id/textView36"
-        android:layout_width="308dp"
-        android:layout_height="19dp"
-        android:elevation="10dp"
-        android:text="@string/exit_description"
-        android:textColor="@color/colorAccent"
-        android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="@+id/title17"
-        app:layout_constraintTop_toBottomOf="@+id/title17" />
-
-    <TextView
-        android:id="@+id/textView25"
-        android:layout_width="308dp"
-        android:layout_height="19dp"
-        android:elevation="10dp"
-        android:text="@string/ip_info_description"
-        android:textColor="@color/colorAccent"
-        android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="@+id/title11"
-        app:layout_constraintTop_toBottomOf="@+id/title13" />
-
-    <TextView
-        android:id="@+id/title13"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="30dp"
-        android:elevation="10dp"
-        android:fontFamily="sans-serif-black"
-        android:text="@string/ipInfo"
-        android:textAlignment="viewStart"
-        android:textColor="@color/colorAccent"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@+id/view10"
-        app:layout_constraintStart_toStartOf="@+id/view9"
-        app:layout_constraintTop_toTopOf="@+id/view10" />
-
-    <View
-        android:id="@+id/view9"
-        android:layout_width="match_parent"
-        android:layout_height="65dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="15dp"
-        android:background="@drawable/rounded_menu_item"
-        android:elevation="8dp"
-        android:onClick="onGangMapButtonClick"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view8" />
-
-    <TextView
-        android:id="@+id/textView28"
-        android:elevation="10dp"
-        android:layout_width="308dp"
-        android:layout_height="19dp"
-        android:text="@string/gang_map_description"
-        android:textColor="@color/colorAccent"
-        android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="@+id/title11"
-        app:layout_constraintTop_toBottomOf="@+id/title11" />
-
-    <TextView
-        android:id="@+id/title11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="30dp"
-        android:elevation="10dp"
-        android:fontFamily="sans-serif-black"
-        android:text="@string/gang_map"
-        android:textAlignment="viewStart"
-        android:textColor="@color/colorAccent"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@+id/view9"
-        app:layout_constraintStart_toStartOf="@+id/view9"
-        app:layout_constraintTop_toTopOf="@+id/view9" />
-
-    <TextView
-        android:id="@+id/title17"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="30dp"
-        android:elevation="10dp"
-        android:fontFamily="sans-serif-black"
-        android:text="@string/exit"
-        android:textAlignment="viewStart"
-        android:textColor="@color/colorAccent"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@+id/view16"
-        app:layout_constraintStart_toStartOf="@+id/view16"
-        app:layout_constraintTop_toTopOf="@+id/view16" />
-
-    <TextView
-        android:id="@+id/textView27"
-        android:layout_width="308dp"
-        android:layout_height="19dp"
-        android:text="@string/changePasswordDescription"
-        android:textColor="@android:color/white"
-        android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="@+id/title7"
-        app:layout_constraintTop_toBottomOf="@+id/title7" />
-
-    <TextView
-        android:id="@+id/title10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginBottom="30dp"
-        android:fontFamily="sans-serif-black"
-        android:text="@string/changePassword"
-        android:textAlignment="viewStart"
-        android:textColor="@android:color/white"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="@+id/view8"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/view8" />
-
-    <View
-        android:id="@+id/view8"
-        android:layout_width="match_parent"
-        android:layout_height="65dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="15dp"
-        android:background="@drawable/rounded_menu_item"
-        android:elevation="8dp"
-        android:onClick="onChangeAdminPasswordButtonClick"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view7" />
-
-    <TextView
-        android:id="@+id/title7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="30dp"
-        android:elevation="10dp"
-        android:fontFamily="sans-serif-black"
-        android:text="@string/changePassword"
-        android:textAlignment="viewStart"
-        android:textColor="@color/colorAccent"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@+id/view8"
-        app:layout_constraintStart_toStartOf="@+id/view8"
-        app:layout_constraintTop_toTopOf="@+id/view8" />
-
-    <TextView
-        android:id="@+id/textView9"
-        android:elevation="10dp"
-        android:layout_width="308dp"
-        android:layout_height="19dp"
-        android:text="@string/changePasswordDescription"
-        android:textColor="@color/colorAccent"
-        android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="@+id/title7"
-        app:layout_constraintTop_toBottomOf="@+id/title7" />
-
-    <View
-        android:id="@+id/view7"
-        android:layout_width="match_parent"
-        android:layout_height="65dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="15dp"
-        android:background="@drawable/rounded_menu_item"
-        android:elevation="8dp"
-        android:onClick="onAdminOnlineListButtonClick"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view6" />
-
-    <TextView
-        android:id="@+id/textView7"
-        android:elevation="10dp"
-        android:layout_width="308dp"
-        android:layout_height="19dp"
-        android:text="@string/adminsOnlineDescription"
-        android:textColor="@color/colorAccent"
-        android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="@+id/title6"
-        app:layout_constraintTop_toBottomOf="@+id/title6" />
-
-    <TextView
-        android:id="@+id/title6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="30dp"
-        android:elevation="10dp"
-        android:fontFamily="sans-serif-black"
-        android:text="@string/adminsOnline"
-        android:textAlignment="viewStart"
-        android:textColor="@color/colorAccent"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@+id/view7"
-        app:layout_constraintStart_toStartOf="@+id/view7"
-        app:layout_constraintTop_toTopOf="@+id/view7" />
-
-    <View
-        android:id="@+id/view6"
-        android:layout_width="match_parent"
-        android:layout_height="65dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="15dp"
-        android:background="@drawable/rounded_menu_item"
-        android:elevation="8dp"
-        android:onClick="onLeaderListButtonClick"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view4" />
-
-    <TextView
-        android:id="@+id/title5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="30dp"
-        android:elevation="10dp"
-        android:fontFamily="sans-serif-black"
-        android:text="@string/leaderList"
-        android:textAlignment="viewStart"
-        android:textColor="@color/colorAccent"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@+id/view6"
-        app:layout_constraintStart_toStartOf="@+id/view6"
-        app:layout_constraintTop_toTopOf="@+id/view6" />
-
-    <TextView
-        android:id="@+id/textView5"
-        android:elevation="10dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/leaderListDescription"
-        android:textColor="@color/colorAccent"
-        android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="@+id/title5"
-        app:layout_constraintTop_toBottomOf="@+id/title5" />
-
-    <View
         android:id="@+id/mainmenubar"
         android:layout_width="match_parent"
         android:layout_height="70dp"
@@ -314,49 +33,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <View
-        android:id="@+id/view4"
-        android:layout_width="match_parent"
-        android:layout_height="65dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="15dp"
-        android:background="@drawable/rounded_menu_item"
-        android:elevation="8dp"
-        android:onClick="onMyStatsButtonClick"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mainmenubar" />
-
-    <TextView
-        android:id="@+id/title4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="30dp"
-        android:elevation="10dp"
-        android:fontFamily="sans-serif-black"
-        android:text="@string/myStats"
-        android:textAlignment="viewStart"
-        android:textColor="@color/colorAccent"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@+id/view4"
-        app:layout_constraintStart_toStartOf="@+id/view4"
-        app:layout_constraintTop_toTopOf="@+id/view4" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:elevation="8dp"
-        app:autoSizeTextType="uniform"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/myStatsDescription"
-        android:textColor="@color/colorAccent"
-        android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="@+id/title4"
-        app:layout_constraintTop_toBottomOf="@+id/title4" />
-
     <ProgressBar
         android:id="@+id/progressBar2"
         android:elevation="10dp"
@@ -369,5 +45,358 @@
         app:layout_constraintBottom_toBottomOf="@+id/mainmenubar"
         app:layout_constraintEnd_toEndOf="@+id/mainmenubar"
         app:layout_constraintTop_toTopOf="@+id/mainmenubar" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mainmenubar">
+
+        <ScrollView
+            android:id="@+id/scrollView2"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:visibility="visible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <View
+                    android:id="@+id/view10"
+                    android:layout_width="match_parent"
+                    android:layout_height="65dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/rounded_menu_item"
+                    android:elevation="8dp"
+                    android:onClick="onIpInfoButtonClick"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.533"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view9" />
+
+                <View
+                    android:id="@+id/view16"
+                    android:layout_width="match_parent"
+                    android:layout_height="65dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/rounded_menu_item"
+                    android:elevation="8dp"
+                    android:onClick="onExitButtonClick"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.333"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view10" />
+
+                <TextView
+                    android:id="@+id/textView36"
+                    android:layout_width="308dp"
+                    android:layout_height="19dp"
+                    android:elevation="10dp"
+                    android:text="@string/exit_description"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="@+id/title17"
+                    app:layout_constraintTop_toBottomOf="@+id/title17" />
+
+                <TextView
+                    android:id="@+id/textView25"
+                    android:layout_width="308dp"
+                    android:layout_height="19dp"
+                    android:elevation="10dp"
+                    android:text="@string/ip_info_description"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="@+id/title11"
+                    app:layout_constraintTop_toBottomOf="@+id/title13" />
+
+                <TextView
+                    android:id="@+id/title13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="30dp"
+                    android:elevation="10dp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="@string/ipInfo"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="24sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/view10"
+                    app:layout_constraintStart_toStartOf="@+id/view9"
+                    app:layout_constraintTop_toTopOf="@+id/view10" />
+
+                <View
+                    android:id="@+id/view9"
+                    android:layout_width="match_parent"
+                    android:layout_height="65dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/rounded_menu_item"
+                    android:elevation="8dp"
+                    android:onClick="onGangMapButtonClick"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view8" />
+
+                <TextView
+                    android:id="@+id/textView28"
+                    android:layout_width="308dp"
+                    android:layout_height="19dp"
+                    android:elevation="10dp"
+                    android:text="@string/gang_map_description"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="@+id/title11"
+                    app:layout_constraintTop_toBottomOf="@+id/title11" />
+
+                <TextView
+                    android:id="@+id/title11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="30dp"
+                    android:elevation="10dp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="@string/gang_map"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="24sp"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toBottomOf="@+id/view9"
+                    app:layout_constraintStart_toStartOf="@+id/view9"
+                    app:layout_constraintTop_toTopOf="@+id/view9" />
+
+                <TextView
+                    android:id="@+id/title17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="30dp"
+                    android:elevation="10dp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="@string/exit"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="24sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/view16"
+                    app:layout_constraintStart_toStartOf="@+id/view16"
+                    app:layout_constraintTop_toTopOf="@+id/view16" />
+
+                <TextView
+                    android:id="@+id/textView27"
+                    android:layout_width="308dp"
+                    android:layout_height="19dp"
+                    android:text="@string/changePasswordDescription"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="@+id/title7"
+                    app:layout_constraintTop_toBottomOf="@+id/title7" />
+
+                <TextView
+                    android:id="@+id/title10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginBottom="30dp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="@string/changePassword"
+                    android:textAlignment="viewStart"
+                    android:textColor="@android:color/white"
+                    android:textSize="30sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/view8"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/view8" />
+
+                <View
+                    android:id="@+id/view8"
+                    android:layout_width="match_parent"
+                    android:layout_height="65dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/rounded_menu_item"
+                    android:elevation="8dp"
+                    android:onClick="onChangeAdminPasswordButtonClick"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view7" />
+
+                <TextView
+                    android:id="@+id/title7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="30dp"
+                    android:elevation="10dp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="@string/changePassword"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="24sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/view8"
+                    app:layout_constraintStart_toStartOf="@+id/view8"
+                    app:layout_constraintTop_toTopOf="@+id/view8" />
+
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="308dp"
+                    android:layout_height="19dp"
+                    android:elevation="10dp"
+                    android:text="@string/changePasswordDescription"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="@+id/title7"
+                    app:layout_constraintTop_toBottomOf="@+id/title7" />
+
+                <View
+                    android:id="@+id/view7"
+                    android:layout_width="match_parent"
+                    android:layout_height="65dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/rounded_menu_item"
+                    android:elevation="8dp"
+                    android:onClick="onAdminOnlineListButtonClick"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view6" />
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="308dp"
+                    android:layout_height="19dp"
+                    android:elevation="10dp"
+                    android:text="@string/adminsOnlineDescription"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="@+id/title6"
+                    app:layout_constraintTop_toBottomOf="@+id/title6" />
+
+                <TextView
+                    android:id="@+id/title6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="30dp"
+                    android:elevation="10dp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="@string/adminsOnline"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="24sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/view7"
+                    app:layout_constraintStart_toStartOf="@+id/view7"
+                    app:layout_constraintTop_toTopOf="@+id/view7" />
+
+                <View
+                    android:id="@+id/view6"
+                    android:layout_width="match_parent"
+                    android:layout_height="65dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/rounded_menu_item"
+                    android:elevation="8dp"
+                    android:onClick="onLeaderListButtonClick"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view4" />
+
+                <TextView
+                    android:id="@+id/title5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="30dp"
+                    android:elevation="10dp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="@string/leaderList"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="24sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/view6"
+                    app:layout_constraintStart_toStartOf="@+id/view6"
+                    app:layout_constraintTop_toTopOf="@+id/view6" />
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:elevation="10dp"
+                    android:text="@string/leaderListDescription"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="@+id/title5"
+                    app:layout_constraintTop_toBottomOf="@+id/title5" />
+
+                <View
+                    android:id="@+id/view4"
+                    android:layout_width="match_parent"
+                    android:layout_height="65dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/rounded_menu_item"
+                    android:elevation="8dp"
+                    android:onClick="onMyStatsButtonClick"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/title4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="30dp"
+                    android:elevation="10dp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="@string/myStats"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="24sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/view4"
+                    app:layout_constraintStart_toStartOf="@+id/view4"
+                    app:layout_constraintTop_toTopOf="@+id/view4" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:elevation="8dp"
+                    android:text="@string/myStatsDescription"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="14sp"
+                    app:autoSizeTextType="uniform"
+                    app:layout_constraintStart_toStartOf="@+id/title4"
+                    app:layout_constraintTop_toBottomOf="@+id/title4" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
