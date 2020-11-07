@@ -54,9 +54,10 @@ class IpInfoActivity : AppCompatActivity(), Observer {
     }
 
     private fun requestIpInfo() {
-        queryClient.globalParams["player_username"] = nameEdit3.text.toString()
+        val currentLocalParams = HashMap<String, String>()
+        currentLocalParams["player_username"] = nameEdit3.text.toString()
         receiver.notifier.addObserver(this@IpInfoActivity)
-        queryClient.executeQuery(context = this, scriptPath = "getPlayerIP.php", dataReceiver = receiver, isResponseArray = false)
+        queryClient.executeQuery(context = this, scriptPath = "getPlayerIP.php", localParams = currentLocalParams, dataReceiver = receiver, isResponseArray = false)
     }
 
     private fun loadIpInfo() {
