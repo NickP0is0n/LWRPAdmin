@@ -30,7 +30,7 @@
     <string name="adminsOnlineDescription">Полная информация об админах в сети</string>
     <string name="adminsOnline">Администрация в сети</string>
     <string name="leaderList">Список лидеров</string>
-    <string name="leaderListDescription">Все лидеры организации и информация о них</string>
+    <string name="leaderListDescription">Все лидеры организаций и информация</string>
     <string name="mainMenu">LWRP Admin</string>
     <string name="myStats">Моя статистика</string>
     <string name="myStatsDescription">Отыгранные часы и выданные наказания</string>
