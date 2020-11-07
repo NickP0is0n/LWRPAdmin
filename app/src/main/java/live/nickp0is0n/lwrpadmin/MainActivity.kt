@@ -124,6 +124,7 @@ class MainActivity : AppCompatActivity(), Observer {
         intent.putExtra("user", user)
         intent.putExtra("adminInfo", admin)
         startActivity(intent)
+        finish()
     }
 
     private fun checkCredentials() {
