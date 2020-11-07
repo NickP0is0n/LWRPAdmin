@@ -14,7 +14,7 @@
     <string name="fractionPlayers">Игроков во фракции</string>
     <string name="defaultFractionPlayers">0</string>
     <string name="accountDetails">Подробная информация</string>
-    <string name="leader">Лидер</string>
+    <string name="leader">Лидер фракции</string>
     <string name="defaultFraction">0</string>
     <string name="status">Статус</string>
     <string name="defaultGetonDate">13:00, 12.05.2020</string>

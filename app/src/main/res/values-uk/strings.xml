@@ -14,7 +14,7 @@
     <string name="fractionPlayers">Гравців у фракції</string>
     <string name="defaultFractionPlayers">0</string>
     <string name="accountDetails">Детальна інформація</string>
-    <string name="leader">Лідер</string>
+    <string name="leader">Лідер фракції</string>
     <string name="defaultFraction">0</string>
     <string name="status">Статус</string>
     <string name="defaultGetonDate">13:00, 12.05.2020</string>
@@ -72,9 +72,9 @@
     <string name="provider">Провайдер</string>
     <string name="defaultIp">00.00.00.00</string>
     <string name="currentIp">Поточний IP</string>
-    <string name="regData">Регістраційні дані</string>
-    <string name="regIp">Регістраційний IP</string>
-    <string name="ip_info_description">Дані про регістраційний та поточний IP</string>
+    <string name="regData">Реєстраційні дані</string>
+    <string name="regIp">Реєстраційний IP</string>
+    <string name="ip_info_description">Дані про реєстраційний та поточний IP</string>
     <string name="server_error">Помилка сервера, спробуйте пізніше.</string>
     <string name="player_not_found">Даного гравця не існує.</string>
     <string name="time_template">%d годин %d хвилин</string>
@@ -82,7 +82,7 @@
     <string name="wrong_pass">Неправильный логін чи пароль</string>
     <string name="not_an_admin">Даний користувач не є адміністратором сервера</string>
     <string name="exit">Вихід</string>
-    <string name="exit_description">Вийти з аккаунту</string>
+    <string name="exit_description">Вийти з облікового запису</string>
     <string-array name="fractionNames">
         <item>-</item>
         <item>LSPD</item>
