@@ -16,4 +16,5 @@
     <color name="colorButton">#2B2B2B</color>
     <color name="colorHeader">#BF2B2B2B</color>
     <color name="colorText">#FFFFFF</color>
+    <color name="colorListText">#FFFFFF</color>
 </resources>

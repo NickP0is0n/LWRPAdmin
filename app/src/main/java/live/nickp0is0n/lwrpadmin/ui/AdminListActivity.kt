@@ -49,7 +49,7 @@ class AdminListActivity : AppCompatActivity() {
         admins.forEach {
             nicknamesList.add("[${it.adminLevel} уровень] ${it.nickname} (${it.pAvig} предупреждений)")
         }
-        val adapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, nicknamesList)
+        val adapter = ArrayAdapter<String>(this, R.layout.list_layout, nicknamesList)
         adminOnlineListView.adapter = adapter
     }
 

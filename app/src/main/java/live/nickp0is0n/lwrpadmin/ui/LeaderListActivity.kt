@@ -49,7 +49,7 @@ class LeaderListActivity : AppCompatActivity() {
         leaders.forEach {
             nicknamesList.add("[${resources.getStringArray(R.array.fractionNames)[it.fractionId]}] ${it.nickname} (${if(it.isOnline) "онлайн" else "оффлайн"})")
         }
-        val adapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, nicknamesList)
+        val adapter = ArrayAdapter<String>(this, R.layout.list_layout, nicknamesList)
         leaderList.adapter = adapter
     }
 
