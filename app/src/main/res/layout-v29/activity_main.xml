@@ -62,7 +62,7 @@
         android:id="@+id/view"
         android:layout_width="match_parent"
         android:layout_height="307dp"
-        android:background="@drawable/rounded_menu_item"
+        android:background="@drawable/rounded_header"
         android:elevation="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -6,5 +6,6 @@
     <color name="colorAccent">#25568F</color>
     <color name="colorBackground">#FFFFFF</color>
     <color name="colorButton">#FFFFFF</color>
+    <color name="colorHeader">#BEFFFFFF</color>
     <color name="colorText">@android:color/black</color>
 </resources>
