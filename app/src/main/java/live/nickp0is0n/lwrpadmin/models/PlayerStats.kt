@@ -8,11 +8,15 @@
 
 package live.nickp0is0n.lwrpadmin.models
 
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+
 /**
  * Данный класс содержит статистику обычного игрока.
  */
 
-data class UserStats (
+@Parcelize
+data class PlayerStats (
     val nickname: String,
     val level: Int,
     val lawLevel: Int, // законопослушность
@@ -22,5 +26,5 @@ data class UserStats (
     val rank: Int = 0,
     val house: Int,
     val cars: String,
-    val business: Int = 0
-)
+    val business: Int
+) : Parcelable
