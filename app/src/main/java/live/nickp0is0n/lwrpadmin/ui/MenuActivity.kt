@@ -17,6 +17,7 @@ import android.view.View.VISIBLE
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_menu.*
+import kotlinx.android.synthetic.main.activity_stats.*
 import live.nickp0is0n.lwrpadmin.MainActivity
 import live.nickp0is0n.lwrpadmin.R
 import live.nickp0is0n.lwrpadmin.models.Admin
@@ -26,6 +27,9 @@ import live.nickp0is0n.lwrpadmin.models.User
 import live.nickp0is0n.lwrpadmin.network.*
 import live.nickp0is0n.lwrpadmin.service.Observer
 import live.nickp0is0n.lwrpadmin.service.QueryStatus
+import java.util.*
+import kotlin.collections.ArrayList
+import kotlin.collections.HashMap
 
 class MenuActivity : AppCompatActivity(), Observer {
     private var user: User? = null
@@ -41,8 +45,20 @@ class MenuActivity : AppCompatActivity(), Observer {
         admin = intent.extras?.get("adminInfo") as Admin
         queryClient = QueryClient("https://lwrp.ru/service/functions/hidden/fu3u8w2/", getGlobalQueryVariables())
         playMainMenuBarAnimation()
-        if (user != null) {
+        if (user != null && admin != null) {
             menuTitle.text = user!!.nickname
+            timeRequest.text = when (Calendar.getInstance().get(Calendar.DAY_OF_WEEK)) {
+                Calendar.MONDAY -> admin!!.mondayOnline.toString()
+                Calendar.TUESDAY -> admin!!.tuesdayOnline.toString()
+                Calendar.WEDNESDAY -> admin!!.wednesdayOnline.toString()
+                Calendar.THURSDAY -> admin!!.thursdayOnline.toString()
+                Calendar.FRIDAY -> admin!!.fridayOnline.toString()
+                Calendar.SATURDAY -> admin!!.saturdayOnline.toString()
+                else -> admin!!.sundayOnline.toString()
+            }
+            timeRequestProgressBar.progress = Integer.parseInt(timeRequest.text.toString())
+            reportCountMenu.text = admin!!.reportsAnswered.toString()
+            adminLevelMenu.text = getString(R.string.adminLevel, admin!!.adminLevel)
         }
     }
 

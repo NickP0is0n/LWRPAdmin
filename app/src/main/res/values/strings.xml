@@ -83,6 +83,12 @@
     <string name="not_an_admin">Данный пользователь не является администратором сервера</string>
     <string name="exit">Выход</string>
     <string name="exit_description">Выйти из аккаунта</string>
+    <string name="minutesFrom">минут из</string>
+    <string name="services">СЕРВИСЫ</string>
+    <string name="adminLevel">Администратор %d уровня</string>
+    <string name="timeRequestDescription">Отыграна норма по игровому времени</string>
+    <string name="reportsAnsweredDescription">Всего отвечено на репорты</string>
+    <string name="times">раз</string>
     <string-array name="fractionNames">
         <item>-</item>
         <item>LSPD</item>
