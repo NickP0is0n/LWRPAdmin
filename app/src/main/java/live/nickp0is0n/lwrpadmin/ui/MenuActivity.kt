@@ -41,6 +41,9 @@ class MenuActivity : AppCompatActivity(), Observer {
         admin = intent.extras?.get("adminInfo") as Admin
         queryClient = QueryClient("https://lwrp.ru/service/functions/hidden/fu3u8w2/", getGlobalQueryVariables())
         playMainMenuBarAnimation()
+        if (user != null) {
+            menuTitle.text = user!!.nickname
+        }
     }
 
     override fun update(status: QueryStatus, resultType: QueryType) {

@@ -8,5 +8,6 @@
     <color name="colorButton">#FFFFFF</color>
     <color name="colorHeader">#FFFFFF</color>
     <color name="colorText">@android:color/black</color>
+    <color name="colorTextLite">#4C4C4C</color>
     <color name="colorListText">#25568F</color>
 </resources>
