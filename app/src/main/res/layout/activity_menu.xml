@@ -80,6 +80,197 @@
                 android:paddingBottom="20dp">
 
                 <View
+                    android:id="@+id/view12"
+                    android:layout_width="match_parent"
+                    android:layout_height="253dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="15dp"
+                    android:background="@drawable/rounded_menu_item"
+                    android:elevation="8dp"
+                    android:onClick="onMyStatsButtonClick"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ProgressBar
+                    android:id="@+id/reportCountProgressBar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="30dp"
+                    android:elevation="8dp"
+                    android:max="240"
+                    android:progress="240"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/reportCountMenu" />
+
+                <TextView
+                    android:id="@+id/title28"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:elevation="10dp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="Всего отвечено на репорты"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/colorText"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="@+id/title18"
+                    app:layout_constraintTop_toBottomOf="@+id/timeRequestProgressBar" />
+
+                <ProgressBar
+                    android:id="@+id/timeRequestProgressBar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="30dp"
+                    android:elevation="8dp"
+                    android:max="240"
+                    android:progress="100"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/timeRequest" />
+
+                <TextView
+                    android:id="@+id/title16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:elevation="10dp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="Отыграна норма по игровому времени"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/colorText"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="@+id/title18"
+                    app:layout_constraintTop_toBottomOf="@+id/title18" />
+
+                <TextView
+                    android:id="@+id/title20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:elevation="10dp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="240"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/colorText"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/title21"
+                    app:layout_constraintStart_toEndOf="@+id/title21" />
+
+                <TextView
+                    android:id="@+id/title21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:elevation="10dp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="минут из"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/colorTextLite"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/timeRequest"
+                    app:layout_constraintStart_toEndOf="@+id/timeRequest" />
+
+                <TextView
+                    android:id="@+id/title30"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:elevation="10dp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="раз"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/colorTextLite"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/reportCountMenu"
+                    app:layout_constraintStart_toEndOf="@+id/reportCountMenu" />
+
+                <TextView
+                    android:id="@+id/title22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginBottom="5dp"
+                    android:elevation="10dp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="минут"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/colorTextLite"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/timeRequest"
+                    app:layout_constraintStart_toEndOf="@+id/title20" />
+
+                <TextView
+                    android:id="@+id/timeRequest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:elevation="10dp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="100"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/colorText"
+                    android:textSize="30sp"
+                    app:layout_constraintStart_toStartOf="@+id/title18"
+                    app:layout_constraintTop_toBottomOf="@+id/title16" />
+
+                <TextView
+                    android:id="@+id/reportCountMenu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:elevation="10dp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="100"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/colorText"
+                    android:textSize="30sp"
+                    app:layout_constraintStart_toStartOf="@+id/title28"
+                    app:layout_constraintTop_toBottomOf="@+id/title28" />
+
+                <TextView
+                    android:id="@+id/title18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
+                    android:elevation="10dp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="Администратор 1 уровня"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="@+id/view12"
+                    app:layout_constraintTop_toTopOf="@+id/view12" />
+
+                <View
+                    android:id="@+id/view10"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/rounded_menu_item"
+                    android:elevation="8dp"
+                    android:onClick="onIpInfoButtonClick"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.533"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view9" />
+
+                <View
                     android:id="@+id/view16"
                     android:layout_width="match_parent"
                     android:layout_height="80dp"
@@ -92,7 +283,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.333"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/view9" />
+                    app:layout_constraintTop_toBottomOf="@+id/view10" />
 
                 <TextView
                     android:id="@+id/textView36"
@@ -100,11 +291,41 @@
                     android:layout_height="19dp"
                     android:elevation="10dp"
                     android:text="@string/exit_description"
-                    android:textColor="@color/colorAccent"
+                    android:textColor="@color/colorText"
                     android:textSize="14sp"
+                    android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="@+id/view16"
                     app:layout_constraintStart_toStartOf="@+id/title17"
                     app:layout_constraintTop_toBottomOf="@+id/title17" />
+
+                <TextView
+                    android:id="@+id/textView25"
+                    android:layout_width="308dp"
+                    android:layout_height="19dp"
+                    android:elevation="10dp"
+                    android:text="@string/ip_info_description"
+                    android:textColor="@color/colorText"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/title11"
+                    app:layout_constraintTop_toBottomOf="@+id/title13" />
+
+                <TextView
+                    android:id="@+id/title13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="30dp"
+                    android:elevation="10dp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="@string/ipInfo"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="24sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/view10"
+                    app:layout_constraintStart_toStartOf="@+id/view9"
+                    app:layout_constraintTop_toTopOf="@+id/view10" />
 
                 <View
                     android:id="@+id/view9"
@@ -127,8 +348,9 @@
                     android:layout_height="19dp"
                     android:elevation="10dp"
                     android:text="@string/gang_map_description"
-                    android:textColor="@color/colorAccent"
+                    android:textColor="@color/colorText"
                     android:textSize="14sp"
+                    android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="@+id/title11"
                     app:layout_constraintTop_toBottomOf="@+id/title11" />
 
@@ -172,8 +394,9 @@
                     android:layout_width="308dp"
                     android:layout_height="19dp"
                     android:text="@string/changePasswordDescription"
-                    android:textColor="@android:color/white"
+                    android:textColor="@color/colorText"
                     android:textSize="14sp"
+                    android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="@+id/title7"
                     app:layout_constraintTop_toBottomOf="@+id/title7" />
 
@@ -232,6 +455,7 @@
                     android:text="@string/changePasswordDescription"
                     android:textColor="@color/colorAccent"
                     android:textSize="14sp"
+                    android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="@+id/view8"
                     app:layout_constraintStart_toStartOf="@+id/title7"
                     app:layout_constraintTop_toBottomOf="@+id/title7" />
@@ -256,8 +480,9 @@
                     android:layout_height="19dp"
                     android:elevation="10dp"
                     android:text="@string/adminsOnlineDescription"
-                    android:textColor="@color/colorAccent"
+                    android:textColor="@color/colorText"
                     android:textSize="14sp"
+                    android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="@+id/view7"
                     app:layout_constraintStart_toStartOf="@+id/title6"
                     app:layout_constraintTop_toBottomOf="@+id/title6" />
@@ -291,7 +516,7 @@
                     android:onClick="onLeaderListButtonClick"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/view4" />
+                    app:layout_constraintTop_toBottomOf="@+id/title15" />
 
                 <TextView
                     android:id="@+id/title5"
@@ -316,55 +541,26 @@
                     android:layout_height="wrap_content"
                     android:elevation="10dp"
                     android:text="@string/leaderListDescription"
-                    android:textColor="@color/colorAccent"
+                    android:textColor="@color/colorText"
                     android:textSize="14sp"
+                    android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="@+id/view6"
                     app:layout_constraintStart_toStartOf="@+id/title5"
                     app:layout_constraintTop_toBottomOf="@+id/title5" />
 
-                <View
-                    android:id="@+id/view4"
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginRight="15dp"
-                    android:background="@drawable/rounded_menu_item"
-                    android:elevation="8dp"
-                    android:onClick="onMyStatsButtonClick"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
                 <TextView
-                    android:id="@+id/title4"
+                    android:id="@+id/title15"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="30dp"
+                    android:layout_marginTop="300dp"
                     android:elevation="10dp"
                     android:fontFamily="sans-serif-black"
-                    android:text="@string/myStats"
+                    android:text="СЕРВИСЫ"
                     android:textAlignment="viewStart"
-                    android:textColor="@color/colorAccent"
-                    android:textSize="24sp"
-                    app:layout_constraintBottom_toBottomOf="@+id/view4"
-                    app:layout_constraintStart_toStartOf="@+id/view4"
-                    app:layout_constraintTop_toTopOf="@+id/view4" />
-
-                <TextView
-                    android:id="@+id/textView4"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:elevation="8dp"
-                    android:text="@string/myStatsDescription"
-                    android:textColor="@color/colorAccent"
-                    android:textSize="14sp"
-                    app:autoSizeTextType="uniform"
-                    app:layout_constraintEnd_toEndOf="@+id/view4"
-                    app:layout_constraintStart_toStartOf="@+id/title4"
-                    app:layout_constraintTop_toBottomOf="@+id/title4" />
+                    android:textColor="@color/colorTextLite"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="@+id/view6"
+                    app:layout_constraintTop_toTopOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>
