@@ -48,13 +48,13 @@ class MenuActivity : AppCompatActivity(), Observer {
         if (user != null && admin != null) {
             menuTitle.text = user!!.nickname
             timeRequest.text = when (Calendar.getInstance().get(Calendar.DAY_OF_WEEK)) {
-                Calendar.MONDAY -> admin!!.mondayOnline.toString()
-                Calendar.TUESDAY -> admin!!.tuesdayOnline.toString()
-                Calendar.WEDNESDAY -> admin!!.wednesdayOnline.toString()
-                Calendar.THURSDAY -> admin!!.thursdayOnline.toString()
-                Calendar.FRIDAY -> admin!!.fridayOnline.toString()
-                Calendar.SATURDAY -> admin!!.saturdayOnline.toString()
-                else -> admin!!.sundayOnline.toString()
+                Calendar.MONDAY -> (admin!!.mondayOnline / 60).toString()
+                Calendar.TUESDAY -> (admin!!.tuesdayOnline / 60).toString()
+                Calendar.WEDNESDAY -> (admin!!.wednesdayOnline / 60).toString()
+                Calendar.THURSDAY -> (admin!!.thursdayOnline / 60).toString()
+                Calendar.FRIDAY -> (admin!!.fridayOnline / 60).toString()
+                Calendar.SATURDAY -> (admin!!.saturdayOnline / 60).toString()
+                else -> (admin!!.sundayOnline / 60).toString()
             }
             timeRequestProgressBar.progress = Integer.parseInt(timeRequest.text.toString())
             reportCountMenu.text = admin!!.reportsAnswered.toString()
