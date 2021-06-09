@@ -24,7 +24,7 @@
     <string name="login">Увійти</string>
     <string name="password">Пароль</string>
     <string name="nickname">Ім\'я гравця</string>
-    <string name="signIn">Авторизація</string>
+    <string name="signIn">З поверненням!</string>
     <string name="changePassword">Змінити пароль</string>
     <string name="changePasswordDescription">Зміна адмін-паролю</string>
     <string name="adminsOnlineDescription">Повна інформація про адмінів в мережі</string>
