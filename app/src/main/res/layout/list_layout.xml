@@ -17,5 +17,5 @@
     android:paddingEnd="?android:attr/listPreferredItemPaddingEnd"
     android:minHeight="?android:attr/listPreferredItemHeightSmall"
     android:textSize="15sp"
-    android:fontFamily="sans-serif-black"
-    android:textColor="@color/colorListText" />
+    android:fontFamily="sans-serif"
+    android:textColor="@color/colorText" />
