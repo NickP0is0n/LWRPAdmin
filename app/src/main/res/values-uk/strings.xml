@@ -31,7 +31,7 @@
     <string name="adminsOnline">Адміністрація онлайн</string>
     <string name="leaderList">Список лідерів</string>
     <string name="leaderListDescription">Всі лідери організацій та інформація</string>
-    <string name="mainMenu">LWRP Admin</string>
+    <string name="mainMenu">Головне меню</string>
     <string name="myStats">Моя статистика</string>
     <string name="myStatsDescription">Відіграні години та видані покарання</string>
     <string name="statsTimesDefault">0 разів</string>

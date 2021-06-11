@@ -4,8 +4,9 @@
     <color name="textColorPrimary">#25568F</color>
     <color name="colorPrimaryDark">#FFFFFF</color>
     <color name="colorAccent">#25568F</color>
-    <color name="colorBackground">#F4F4F4</color>
-    <color name="colorBackgroundLite">#FFFFFF</color>
+    <color name="colorBackground">#FFFFFF</color>
+    <color name="colorBackgroundLite">#F4F4F4</color>
+    <color name="menuItemColor">#FFFFFF</color>
     <color name="colorButton">#FFFFFF</color>
     <color name="colorHeader">#FFFFFF</color>
     <color name="colorText">@android:color/black</color>

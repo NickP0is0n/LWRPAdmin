@@ -12,7 +12,9 @@
     <color name="textColorPrimary">#25568F</color>
     <color name="colorPrimaryDark">#2B2B2B</color>
     <color name="colorAccent">#6B9FDC</color>
-    <color name="colorBackground">#1C1C1C</color>
+    <color name="colorBackground">#000000</color>
+    <color name="colorBackgroundLite">#000000</color>
+    <color name="menuItemColor">#1C1C1C</color>
     <color name="colorButton">#2B2B2B</color>
     <color name="colorHeader">#BF2B2B2B</color>
     <color name="colorText">#FFFFFF</color>
