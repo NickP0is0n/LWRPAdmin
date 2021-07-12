@@ -43,4 +43,7 @@ data class Admin(
     val muted: Int,
     val jailed: Int,
     val pAvig: Int
-) : Parcelable
+) : Parcelable {
+    val totalOnline
+    get() = mondayOnline + tuesdayOnline + wednesdayOnline + thursdayOnline + fridayOnline + saturdayOnline + sundayOnline
+}

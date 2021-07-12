@@ -12,18 +12,18 @@ import live.nickp0is0n.lwrpadmin.models.Admin
 import live.nickp0is0n.lwrpadmin.service.QueryStatus
 import org.json.JSONArray
 
-class AdminListReceiver : DataReceiver {
+open class AdminListReceiver : DataReceiver {
     val notifier = QueryNotifier()
     private var data: JSONArray? = null
 
-    override fun receiveData(data: Any) {
+    override open fun receiveData(data: Any) {
         this.data = data as JSONArray
         notifier.resultType = QueryType.ADMIN_LIST
         notifier.status = QueryStatus.SUCCESS
         notifier.notifyObserver()
     }
 
-    override fun errorCallback(text: String) {
+    override open fun errorCallback(text: String) {
         notifier.resultType = QueryType.ADMIN_LIST
         notifier.status = QueryStatus.ERROR
         notifier.notifyObserver()

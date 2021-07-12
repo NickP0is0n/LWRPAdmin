@@ -72,6 +72,7 @@ class MenuActivity : AppCompatActivity(), Observer {
             QueryType.LEADER_LIST -> loadLeaders()
             QueryType.ADMIN_LIST -> loadAdmins()
             QueryType.GANG_MAP -> loadGangMap()
+            QueryType.ADMIN_TOP -> loadAdminTop()
             else -> Toast.makeText(this@MenuActivity, getString(R.string.server_error), Toast.LENGTH_SHORT).show()
         }
     }
@@ -120,6 +121,10 @@ class MenuActivity : AppCompatActivity(), Observer {
         requestGangMap()
     }
 
+    fun onAdminTopButtonClick(view: View) {
+
+    }
+
     private fun playMainMenuBarAnimation() {
         mainmenubar.x -= 1000f
         ObjectAnimator.ofFloat(mainmenubar, "translationX", 0f).apply {
@@ -146,6 +151,12 @@ class MenuActivity : AppCompatActivity(), Observer {
         queryClient.executeQuery(context = this, scriptPath = "getAdminListAndInfo.php", dataReceiver = receiver, isResponseArray = true)
     }
 
+    private fun requestAdminTop() {
+        receiver = AdminTopReceiver()
+        (receiver as AdminListReceiver).notifier.addObserver(this@MenuActivity)
+        queryClient.executeQuery(context = this, scriptPath = "getAdminTop.php", dataReceiver = receiver, isResponseArray = true)
+    }
+
     private fun getGlobalQueryVariables() : HashMap<String, String> {
         val headers = HashMap<String, String>()
         headers["username"] = user!!.nickname
@@ -164,6 +175,14 @@ class MenuActivity : AppCompatActivity(), Observer {
     private fun loadAdmins() {
         val admins = receiver.getData() as ArrayList<Admin>
         val intent = Intent(this, AdminListActivity::class.java)
+        intent.putExtra("adminList", admins)
+        progressBar2.visibility = INVISIBLE
+        startActivity(intent)
+    }
+
+    private fun loadAdminTop() {
+        val admins = receiver.getData() as ArrayList<Admin>
+        val intent = Intent(this, AdminTopListActivity::class.java)
         intent.putExtra("adminList", admins)
         progressBar2.visibility = INVISIBLE
         startActivity(intent)
