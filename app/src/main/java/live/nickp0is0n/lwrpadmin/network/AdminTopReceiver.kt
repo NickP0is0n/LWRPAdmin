@@ -13,7 +13,7 @@ import live.nickp0is0n.lwrpadmin.service.QueryStatus
 import org.json.JSONArray
 
 class AdminTopReceiver : AdminListReceiver() {
-    private var data: JSONArray? = null
+    override var data: JSONArray? = null
 
     override fun receiveData(data: Any) {
         this.data = data as JSONArray

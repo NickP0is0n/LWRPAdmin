@@ -122,7 +122,8 @@ class MenuActivity : AppCompatActivity(), Observer {
     }
 
     fun onAdminTopButtonClick(view: View) {
-
+        progressBar2.visibility = VISIBLE
+        requestAdminTop()
     }
 
     private fun playMainMenuBarAnimation() {

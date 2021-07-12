@@ -14,16 +14,16 @@ import org.json.JSONArray
 
 open class AdminListReceiver : DataReceiver {
     val notifier = QueryNotifier()
-    private var data: JSONArray? = null
+    open var data: JSONArray? = null
 
-    override open fun receiveData(data: Any) {
+    override fun receiveData(data: Any) {
         this.data = data as JSONArray
         notifier.resultType = QueryType.ADMIN_LIST
         notifier.status = QueryStatus.SUCCESS
         notifier.notifyObserver()
     }
 
-    override open fun errorCallback(text: String) {
+    override fun errorCallback(text: String) {
         notifier.resultType = QueryType.ADMIN_LIST
         notifier.status = QueryStatus.ERROR
         notifier.notifyObserver()

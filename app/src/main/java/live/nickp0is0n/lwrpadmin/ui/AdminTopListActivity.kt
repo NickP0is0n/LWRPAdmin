@@ -15,7 +15,7 @@ class AdminTopListActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_admin_list)
+        setContentView(R.layout.activity_admin_top_list)
         initializeAdminList()
         adminOnlineListView.onItemClickListener = AdapterView.OnItemClickListener { _, _, position, _ ->
             run {
