@@ -41,9 +41,9 @@ class GangMapActivity : AppCompatActivity() {
     }
 
     private fun playTopBarAnimation() {
-        gangmaptopbar.x -= 1000f
-        ObjectAnimator.ofFloat(gangmaptopbar, "translationX", 0f).apply {
-            duration = 2000
+        gangmaptopbar.y -= 1000f
+        ObjectAnimator.ofFloat(gangmaptopbar, "translationY", 0f).apply {
+            duration = 1000
             start()
         }
     }

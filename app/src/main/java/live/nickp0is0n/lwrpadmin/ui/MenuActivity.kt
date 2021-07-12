@@ -127,9 +127,9 @@ class MenuActivity : AppCompatActivity(), Observer {
     }
 
     private fun playMainMenuBarAnimation() {
-        mainmenubar.x -= 1000f
-        ObjectAnimator.ofFloat(mainmenubar, "translationX", 0f).apply {
-            duration = 2000
+        mainmenubar.y -= 1000f
+        ObjectAnimator.ofFloat(mainmenubar, "translationY", 0f).apply {
+            duration = 1000
             start()
         }
     }

@@ -36,9 +36,9 @@ class LeaderListActivity : AppCompatActivity() {
     }
 
     private fun playTopBarAnimation() {
-        leaderlisttopbar.x -= 1000f
-        ObjectAnimator.ofFloat(leaderlisttopbar, "translationX", 0f).apply {
-            duration = 2000
+        leaderlisttopbar.y -= 1000f
+        ObjectAnimator.ofFloat(leaderlisttopbar, "translationY", 0f).apply {
+            duration = 1000
             start()
         }
     }

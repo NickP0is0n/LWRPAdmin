@@ -28,9 +28,9 @@ class LeaderInfoActivity : AppCompatActivity() {
     }
 
     private fun playTopBarAnimation() {
-        leaderinfotopbar.x -= 1000f
-        ObjectAnimator.ofFloat(leaderinfotopbar, "translationX", 0f).apply {
-            duration = 2000
+        leaderinfotopbar.y -= 1000f
+        ObjectAnimator.ofFloat(leaderinfotopbar, "translationY", 0f).apply {
+            duration = 1000
             start()
         }
     }

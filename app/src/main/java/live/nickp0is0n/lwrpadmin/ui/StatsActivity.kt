@@ -32,9 +32,9 @@ class StatsActivity : AppCompatActivity() {
     }
 
     private fun playHeaderAnimation() {
-        view3.x -= 1000f
-        ObjectAnimator.ofFloat(view3, "translationX", 0f).apply {
-            duration = 2000
+        view3.y -= 1000f
+        ObjectAnimator.ofFloat(view3, "translationY", 0f).apply {
+            duration = 1000
             start()
         }
     }

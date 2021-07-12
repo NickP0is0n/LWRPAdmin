@@ -28,9 +28,9 @@ class AdminTopListActivity : AppCompatActivity() {
     }
 
     private fun playTopBarAnimation() {
-        adminListTopBar3.x -= 1000f
-        ObjectAnimator.ofFloat(adminListTopBar3, "translationX", 0f).apply {
-            duration = 2000
+        adminListTopBar3.y -= 1000f
+        ObjectAnimator.ofFloat(adminListTopBar3, "translationY", 0f).apply {
+            duration = 1000
             start()
         }
     }

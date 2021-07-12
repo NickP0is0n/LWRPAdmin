@@ -117,9 +117,9 @@ class IpInfoActivity : AppCompatActivity(), Observer {
     }
 
     private fun playTopBarAnimation() {
-        ipinfotopbar.x -= 1000f
-        ObjectAnimator.ofFloat(ipinfotopbar, "translationX", 0f).apply {
-            duration = 2000
+        ipinfotopbar.y -= 1000f
+        ObjectAnimator.ofFloat(ipinfotopbar, "translationY", 0f).apply {
+            duration = 1000
             start()
         }
     }
