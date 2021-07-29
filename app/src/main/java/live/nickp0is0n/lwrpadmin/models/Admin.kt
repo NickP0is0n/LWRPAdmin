@@ -46,4 +46,8 @@ data class Admin(
 ) : Parcelable {
     val totalOnline
     get() = mondayOnline + tuesdayOnline + wednesdayOnline + thursdayOnline + fridayOnline + saturdayOnline + sundayOnline
+
+    companion object {
+        const val ONLINE_REQUIREMENT = 180 // в минутах
+    }
 }

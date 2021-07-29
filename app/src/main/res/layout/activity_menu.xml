@@ -152,13 +152,13 @@
                     app:layout_constraintTop_toBottomOf="@+id/adminLevelMenu" />
 
                 <TextView
-                    android:id="@+id/title20"
+                    android:id="@+id/onlineRequirementTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="3dp"
                     android:elevation="10dp"
                     android:fontFamily="sans-serif-black"
-                    android:text="240"
+                    android:text="0"
                     android:textAlignment="viewStart"
                     android:textColor="@color/colorText"
                     android:textSize="14sp"
@@ -206,7 +206,7 @@
                     android:textColor="@color/colorTextLite"
                     android:textSize="14sp"
                     app:layout_constraintBottom_toBottomOf="@+id/timeRequest"
-                    app:layout_constraintStart_toEndOf="@+id/title20" />
+                    app:layout_constraintStart_toEndOf="@+id/onlineRequirementTextView" />
 
                 <TextView
                     android:id="@+id/timeRequest"

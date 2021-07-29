@@ -20,7 +20,6 @@ import java.util.*
 import java.util.Calendar.DAY_OF_WEEK
 
 class StatsActivity : AppCompatActivity() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         requestWindowFeature(Window.FEATURE_NO_TITLE) //will hide the title
@@ -62,13 +61,13 @@ class StatsActivity : AppCompatActivity() {
     }
 
     private fun checkRequiredTime(admin: Admin) : Boolean =  when(Calendar.getInstance().get(DAY_OF_WEEK)) {
-        1 -> admin.sundayOnline < 14400 //Класс Calendar использует воскресенье в качестве первого дня
-        2 -> admin.mondayOnline < 14400
-        3 -> admin.tuesdayOnline < 14400
-        4 -> admin.wednesdayOnline < 14400
-        5 -> admin.thursdayOnline < 14400
-        6 -> admin.fridayOnline < 14400
-        7 -> admin.saturdayOnline < 14400
+        1 -> admin.sundayOnline < ( Admin.ONLINE_REQUIREMENT * 60 ) //Класс Calendar использует воскресенье в качестве первого дня
+        2 -> admin.mondayOnline < ( Admin.ONLINE_REQUIREMENT * 60 )
+        3 -> admin.tuesdayOnline < ( Admin.ONLINE_REQUIREMENT * 60 )
+        4 -> admin.wednesdayOnline < ( Admin.ONLINE_REQUIREMENT * 60 )
+        5 -> admin.thursdayOnline < ( Admin.ONLINE_REQUIREMENT * 60 )
+        6 -> admin.fridayOnline < ( Admin.ONLINE_REQUIREMENT * 60 )
+        7 -> admin.saturdayOnline < ( Admin.ONLINE_REQUIREMENT * 60 )
         else -> false
     }
 

@@ -45,6 +45,8 @@ class MenuActivity : AppCompatActivity(), Observer {
         admin = intent.extras?.get("adminInfo") as Admin
         queryClient = QueryClient("https://lwrp.ru/service/functions/hidden/fu3u8w2/", getGlobalQueryVariables())
         playMainMenuBarAnimation()
+        timeRequestProgressBar.max = Admin.ONLINE_REQUIREMENT
+        onlineRequirementTextView.text = "${Admin.ONLINE_REQUIREMENT}"
         if (user != null && admin != null) {
             menuTitle.text = user!!.nickname
             timeRequest.text = when (Calendar.getInstance().get(Calendar.DAY_OF_WEEK)) {
